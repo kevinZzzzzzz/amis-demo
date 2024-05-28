@@ -1,0 +1,991 @@
+{
+  "type": "page",
+  "title": "",
+  "body": [
+    {
+      "type": "tpl",
+      "tpl": "献血不良反应报告表",
+      "inline": true,
+      "wrapperComponent": "h2",
+      "id": "u:e8f3a1762308",
+      "visible": true,
+      "wrapperCustomStyle": {
+        "root": {
+          "text-align": "center",
+          "margin-bottom": "20px"
+        }
+      }
+    },
+    {
+      "type": "panel",
+      "title": "1、基本情况",
+      "body": [
+        {
+          "type": "flex",
+          "className": "p-1",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-text",
+                  "label": "姓名：",
+                  "name": "name",
+                  "id": "u:56674f6b27d5",
+                  "mode": "horizontal"
+                }
+              ],
+              "size": "xs",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "0 0 150px",
+                "flexBasis": "25%",
+                "overflowX": "visible"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:04afb60c5282"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "select",
+                  "label": "性别：",
+                  "name": "gender",
+                  "options": [
+                    {
+                      "label": "男",
+                      "value": "A"
+                    },
+                    {
+                      "label": "女",
+                      "value": "B"
+                    }
+                  ],
+                  "id": "u:7c61bd28210c",
+                  "multiple": false,
+                  "mode": "horizontal",
+                  "value": ""
+                }
+              ],
+              "size": "xs",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "0 0 150px",
+                "flexBasis": "25%",
+                "overflowX": "visible"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:27e0a807a670"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-text",
+                  "label": "证件号码：",
+                  "name": "identityId",
+                  "id": "u:9df90e933675",
+                  "mode": "horizontal"
+                }
+              ],
+              "size": "xs",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "0 0 150px",
+                "flexBasis": "25%",
+                "overflowX": "visible"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:1f0d772737d7"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-text",
+                  "label": "联系方式：",
+                  "name": "contactTel",
+                  "id": "u:4f4b08baa9b1",
+                  "mode": "horizontal"
+                }
+              ],
+              "size": "xs",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "0 0 150px",
+                "flexBasis": "25%",
+                "overflowX": "visible"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:6f04595a2bfa"
+            }
+          ],
+          "style": {
+            "position": "relative"
+          },
+          "id": "u:bed20b2be2d8"
+        },
+        {
+          "type": "flex",
+          "className": "p-1",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-text",
+                  "label": "体重：",
+                  "name": "weight",
+                  "id": "u:b93079310662",
+                  "mode": "horizontal"
+                }
+              ],
+              "size": "xs",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "0 0 150px",
+                "flexBasis": "25%",
+                "overflowX": "visible"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:559cd0679587"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-text",
+                  "label": "身高：",
+                  "name": "height",
+                  "id": "u:5346a4e7bb1c",
+                  "mode": "horizontal"
+                }
+              ],
+              "size": "xs",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "0 0 150px",
+                "flexBasis": "25%",
+                "overflowX": "visible"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:3a7e2b8309d1"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "献血史：",
+                  "name": "radios1",
+                  "options": [
+                    {
+                      "label": "初次",
+                      "value": "A"
+                    },
+                    {
+                      "label": "再次",
+                      "value": "B"
+                    }
+                  ],
+                  "id": "u:20b47c9e32ce",
+                  "mode": "horizontal",
+                  "value": ""
+                }
+              ],
+              "size": "xs",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "0 0 150px",
+                "flexBasis": "25%",
+                "overflowX": "visible"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:e8004508f0ec"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "采集量：",
+                  "name": "radios2",
+                  "options": [
+                    {
+                      "label": "全血ml",
+                      "value": "A"
+                    },
+                    {
+                      "label": "单采U",
+                      "value": "B"
+                    }
+                  ],
+                  "id": "u:2b4adee509a7",
+                  "mode": "horizontal",
+                  "value": ""
+                }
+              ],
+              "size": "xs",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "0 0 150px",
+                "flexBasis": "25%",
+                "overflowX": "visible"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:cbc4ea0483ec"
+            }
+          ],
+          "style": {
+            "position": "relative"
+          },
+          "id": "u:a8d1069f938a"
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "checkboxes",
+                  "label": "献血地点：",
+                  "name": "checkboxes1",
+                  "multiple": true,
+                  "options": [
+                    {
+                      "label": "血站内",
+                      "value": 1
+                    },
+                    {
+                      "label": "献血屋",
+                      "value": 2
+                    },
+                    {
+                      "label": "献血车",
+                      "value": 3
+                    },
+                    {
+                      "label": "其他",
+                      "value": 4
+                    }
+                  ],
+                  "id": "u:6bbeaeaa2a6c",
+                  "checkAll": false,
+                  "joinValues": true,
+                  "mode": "horizontal"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:2976c8ff1991"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "checkboxes",
+                  "label": "献血组织形式：",
+                  "name": "checkboxes2",
+                  "multiple": true,
+                  "options": [
+                    {
+                      "label": "个人",
+                      "value": 1
+                    },
+                    {
+                      "label": "社会团体",
+                      "value": 2
+                    },
+                    {
+                      "label": "高校团体",
+                      "value": 3
+                    }
+                  ],
+                  "id": "u:dc7486f77b7b",
+                  "checkAll": false,
+                  "joinValues": true,
+                  "mode": "horizontal"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:41da58a56275"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px"
+          },
+          "id": "u:5717454d324d"
+        }
+      ],
+      "id": "u:52495ee8c534",
+      "actions": [],
+      "affixFooter": false,
+      "subFormMode": "normal",
+      "hidden": false,
+      "visibleOn": ""
+    },
+    {
+      "type": "panel",
+      "title": "2、反应情况",
+      "body": [
+        {
+          "type": "tpl",
+          "tpl": "发生时间：",
+          "inline": true,
+          "wrapperComponent": "p",
+          "id": "u:bcdef14d1e80",
+          "themeCss": {
+            "baseControlClassName": {
+              "font:default": {
+                "fontWeight": "900"
+              }
+            }
+          }
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-time",
+                  "label": "反应发生时间：",
+                  "name": "date",
+                  "id": "u:7e75a3c9487c",
+                  "placeholder": "请选择时间",
+                  "valueFormat": "X",
+                  "displayFormat": "HH:mm",
+                  "minDate": "",
+                  "maxDate": "",
+                  "value": "",
+                  "mode": "horizontal"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px",
+                "overflowY": "visible"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:87ef22f21b12"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-time",
+                  "label": "反应终止时间：",
+                  "name": "date1",
+                  "id": "u:3c5c9130d425",
+                  "placeholder": "请选择时间",
+                  "valueFormat": "X",
+                  "displayFormat": "HH:mm",
+                  "minDate": "",
+                  "maxDate": "",
+                  "value": "",
+                  "mode": "horizontal"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:4f1d80beaa86"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-time",
+                  "label": "离开现场时间：",
+                  "name": "date3",
+                  "id": "u:514a11e19750",
+                  "placeholder": "请选择时间",
+                  "valueFormat": "X",
+                  "displayFormat": "HH:mm",
+                  "minDate": "",
+                  "maxDate": "",
+                  "value": "",
+                  "mode": "horizontal"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:b816e072d20a"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px"
+          },
+          "id": "u:dc943f40ef41"
+        },
+        {
+          "type": "checkboxes",
+          "label": "反应发生于：",
+          "name": "checkboxes4",
+          "multiple": true,
+          "options": [
+            {
+              "label": "进针前",
+              "value": "A"
+            },
+            {
+              "label": "采血前",
+              "value": "B"
+            },
+            {
+              "label": "拔针后",
+              "value": "拔针后"
+            },
+            {
+              "label": "献血后休息",
+              "value": "献血后休息"
+            },
+            {
+              "label": "离开后",
+              "value": "离开后"
+            }
+          ],
+          "id": "u:ce91d1c4bc0b",
+          "checkAll": false,
+          "joinValues": true,
+          "mode": "horizontal"
+        },
+        {
+          "type": "tpl",
+          "tpl": "可能诱因：",
+          "inline": true,
+          "wrapperComponent": "p",
+          "id": "u:251350f54ec2",
+          "themeCss": {
+            "baseControlClassName": {
+              "font:default": {
+                "fontWeight": "900"
+              }
+            }
+          }
+        },
+        {
+          "type": "checkboxes",
+          "label": false,
+          "name": "checkboxes5",
+          "multiple": true,
+          "options": [
+            {
+              "label": "晕针",
+              "value": "13"
+            },
+            {
+              "label": "晕血",
+              "value": "12"
+            },
+            {
+              "label": "紧张",
+              "value": "11"
+            },
+            {
+              "label": "空腹",
+              "value": "10"
+            },
+            {
+              "label": "疲劳",
+              "value": "9"
+            },
+            {
+              "label": "睡眠不足",
+              "value": "8"
+            },
+            {
+              "label": "长时间未补充水分",
+              "value": "7"
+            },
+            {
+              "label": "疼痛",
+              "value": "6"
+            },
+            {
+              "label": "穿刺不顺",
+              "value": "5"
+            },
+            {
+              "label": "采血时间过长",
+              "value": "4"
+            },
+            {
+              "label": "环境因素",
+              "value": "3"
+            },
+            {
+              "label": "群体效应",
+              "value": "2"
+            },
+            {
+              "label": "其他：",
+              "value": "1"
+            }
+          ],
+          "id": "u:7744b88fd290",
+          "checkAll": false,
+          "joinValues": true,
+          "mode": "inline",
+          "onEvent": {
+            "change": {
+              "weight": 0,
+              "actions": [
+                {
+                  "ignoreError": false,
+                  "script": "/* 自定义JS使用说明：\n  * 1.动作执行函数doAction，可以执行所有类型的动作\n  * 2.通过上下文对象context可以获取当前组件实例，例如context.props可以获取该组件相关属性\n  * 3.事件对象event，在doAction之后执行event.stopPropagation();可以阻止后续动作执行\n*/\nconst myMsg = '我是自定义JS';\nconsole.log(this, myMsg)\ndoAction({\n  actionType: 'toast',\n  args: {\n    msg: myMsg\n  }\n});\n",
+                  "actionType": "custom",
+                  "args": {}
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "input-text",
+          "label": "",
+          "name": "text7",
+          "id": "u:d88d9cde53dd",
+          "mode": "horizontal",
+          "hidden": false,
+          "visibleOn": "${CONTAINS(checkboxes5, '1')}",
+          "placeholder": "请输入其他原因"
+        },
+        {
+          "type": "tpl",
+          "tpl": "一般表现：",
+          "inline": true,
+          "wrapperComponent": "p",
+          "id": "u:6af8d4fa25f0",
+          "themeCss": {
+            "baseControlClassName": {
+              "font:default": {
+                "fontWeight": "900"
+              }
+            }
+          }
+        },
+        {
+          "type": "checkboxes",
+          "label": "局部表现：",
+          "name": "checkboxes6",
+          "multiple": true,
+          "options": [
+            {
+              "label": "淤青",
+              "value": "6"
+            },
+            {
+              "label": "血肿",
+              "value": "5"
+            },
+            {
+              "label": "疼痛",
+              "value": "4"
+            },
+            {
+              "label": "出血",
+              "value": "3"
+            },
+            {
+              "label": "局部过敏",
+              "value": "2"
+            },
+            {
+              "label": "其他：",
+              "value": "1"
+            }
+          ],
+          "id": "u:b5a330230d55",
+          "checkAll": false,
+          "joinValues": true,
+          "mode": "inline",
+          "className": "b-3x"
+        },
+        {
+          "type": "input-text",
+          "label": "",
+          "name": "text8",
+          "id": "u:e9ab1ba825d4",
+          "mode": "horizontal",
+          "hidden": false,
+          "visibleOn": "${CONTAINS(checkboxes6, '1')}",
+          "placeholder": "请输入其他表现",
+          "clearable": true,
+          "wrapperCustomStyle": {},
+          "size": "full"
+        },
+        {
+          "type": "checkboxes",
+          "label": "全身表现：",
+          "name": "checkboxes7",
+          "multiple": true,
+          "options": [
+            {
+              "label": "头晕",
+              "value": "14"
+            },
+            {
+              "label": "出汗",
+              "value": "13"
+            },
+            {
+              "label": "虚弱",
+              "value": "12"
+            },
+            {
+              "label": "焦虑",
+              "value": "11"
+            },
+            {
+              "label": "面色苍白",
+              "value": "10"
+            },
+            {
+              "label": "全身不适",
+              "value": "9"
+            },
+            {
+              "label": "恶心",
+              "value": "8"
+            },
+            {
+              "label": "呕吐",
+              "value": "7,"
+            },
+            {
+              "label": "换气过度",
+              "value": "6"
+            },
+            {
+              "label": "晕厥",
+              "value": "5"
+            },
+            {
+              "label": "抽搐",
+              "value": "4"
+            },
+            {
+              "label": "肌肉痉挛",
+              "value": "3"
+            },
+            {
+              "label": "大小便失禁",
+              "value": "2"
+            },
+            {
+              "label": "其他：",
+              "value": "1"
+            }
+          ],
+          "id": "u:19039188630c",
+          "checkAll": false,
+          "joinValues": true,
+          "mode": "inline",
+          "className": "w-full"
+        },
+        {
+          "type": "input-text",
+          "label": "",
+          "name": "text9",
+          "id": "u:7e047ebecef2",
+          "mode": "horizontal",
+          "hidden": false,
+          "visibleOn": "${CONTAINS(checkboxes7, '1')}",
+          "placeholder": "请输入其他表现",
+          "size": "full"
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "checkboxes",
+                  "label": "意思丧失：",
+                  "name": "checkboxes8",
+                  "multiple": true,
+                  "options": [
+                    {
+                      "label": "无",
+                      "value": "A"
+                    },
+                    {
+                      "label": "有",
+                      "value": "B"
+                    }
+                  ],
+                  "id": "u:250415e7283a",
+                  "checkAll": false,
+                  "joinValues": true,
+                  "mode": "inline"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 2,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:573d0d67caf6"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "checkboxes",
+                  "label": "持续时间：",
+                  "name": "checkboxes9",
+                  "multiple": true,
+                  "options": [
+                    {
+                      "label": "<60s",
+                      "value": "A"
+                    },
+                    {
+                      "label": "60s~5min",
+                      "value": "B"
+                    },
+                    {
+                      "label": "5min~10min",
+                      "value": "5min~10min"
+                    },
+                    {
+                      "label": "10min~30min",
+                      "value": "10min~30min"
+                    },
+                    {
+                      "label": ">30min",
+                      "value": ">30min"
+                    }
+                  ],
+                  "id": "u:29fd80a6b839",
+                  "checkAll": false,
+                  "joinValues": true,
+                  "mode": "inline"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 10,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:8573e4bb43b7"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px"
+          },
+          "id": "u:a1992ad2e511"
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "checkboxes",
+                  "label": "有无外伤：",
+                  "name": "checkboxes10",
+                  "multiple": true,
+                  "options": [
+                    {
+                      "label": "无",
+                      "value": "A"
+                    },
+                    {
+                      "label": "有",
+                      "value": "B"
+                    }
+                  ],
+                  "id": "u:b50a29f71dae",
+                  "checkAll": false,
+                  "joinValues": true,
+                  "mode": "inline"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 2,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:b87cbb8fe3bd"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "checkboxes",
+                  "label": "严重程度：",
+                  "name": "checkboxes11",
+                  "multiple": true,
+                  "options": [
+                    {
+                      "label": "体表挫伤",
+                      "value": "A"
+                    },
+                    {
+                      "label": "局部止血包扎",
+                      "value": "B"
+                    },
+                    {
+                      "label": "外送就医",
+                      "value": "外送就医"
+                    }
+                  ],
+                  "id": "u:7de1d5426301",
+                  "checkAll": false,
+                  "joinValues": true,
+                  "mode": "inline"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 10,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:718c21c81e46"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px"
+          },
+          "id": "u:f20b42f2aa30"
+        }
+      ],
+      "id": "u:3bc16a1bdb83",
+      "affixFooter": false,
+      "actions": [],
+      "visible": true,
+      "hidden": false,
+      "subFormMode": ""
+    }
+  ],
+  "id": "u:1cb7ea6a34e4",
+  "asideResizor": false,
+  "pullRefresh": {
+    "disabled": true
+  },
+  "asideSticky": true,
+  "toolbar": [],
+  "themeCss": {
+    "baseControlClassName": {
+      "border:default": {
+        "top-border-style": "var(--borders-style-2)",
+        "left-border-style": "var(--borders-style-2)",
+        "right-border-style": "var(--borders-style-2)",
+        "bottom-border-style": "var(--borders-style-2)",
+        "top-border-color": "var(--colors-neutral-fill-11)",
+        "left-border-color": "var(--colors-neutral-fill-11)",
+        "right-border-color": "var(--colors-neutral-fill-11)",
+        "bottom-border-color": "var(--colors-neutral-fill-11)"
+      }
+    }
+  },
+  "aside": [],
+  "regions": [
+    "body"
+  ]
+}
