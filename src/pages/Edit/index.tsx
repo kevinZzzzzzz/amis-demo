@@ -4,12 +4,6 @@ import type { SchemaObject } from "amis";
 import { render as renderAmis } from "amis";
 import type { Schema } from "amis/lib/types";
 import "./index.scss";
-// 以下样式均生效
-import "amis/lib/themes/default.css";
-import "amis/lib/helper.css";
-import "amis/sdk/iconfont.css";
-import "amis-editor-core/lib/style.css";
-import "amis-ui/lib/themes/antd.css";
 import domJson from "./dom.json";
 type Props = {
   defaultPageConfig?: Schema;

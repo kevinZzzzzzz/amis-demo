@@ -60,7 +60,7 @@ export default ({ mode, command }) => {
       },
     },
     server: {
-      port: 8881,
+      port: 8888,
       host: true,
       proxy: {
         "/api": {
