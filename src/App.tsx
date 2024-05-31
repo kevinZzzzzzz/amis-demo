@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   HashRouter,
   Navigate,
@@ -28,6 +28,17 @@ declare global {
 window.$api = { ...api };
 
 function App() {
+  // useEffect(() => {
+  //   console.log(111111111, window.self !== window.top);
+  //   const handleMessage = (event: any) => {
+  //     console.log(event, "event----------");
+  //   };
+  //   window.addEventListener("message", handleMessage, false);
+
+  //   return () => {
+  //     window.removeEventListener("message", handleMessage, false);
+  //   };
+  // }, []);
   return (
     <HashRouter>
       <Routes>
