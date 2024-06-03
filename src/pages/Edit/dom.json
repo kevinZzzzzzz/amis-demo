@@ -33,7 +33,7 @@
                 {
                   "type": "input-text",
                   "label": "姓名：",
-                  "name": "globalData.name",
+                  "name": "name",
                   "id": "u:56674f6b27d5",
                   "mode": "horizontal"
                 }
@@ -57,7 +57,7 @@
                 {
                   "type": "select",
                   "label": "性别：",
-                  "name": "globalData.gender",
+                  "name": "gender",
                   "options": [
                     {
                       "label": "男",
@@ -93,7 +93,7 @@
                 {
                   "type": "input-text",
                   "label": "证件号码：",
-                  "name": "globalData.identityId",
+                  "name": "identityId",
                   "id": "u:9df90e933675",
                   "mode": "horizontal"
                 }
@@ -365,6 +365,15 @@
             "columnGap": "10px"
           },
           "id": "u:5717454d324d"
+        },{
+          "type": "input-text",
+          "name": "name",
+          "label": "姓名："
+        },
+        {
+          "name": "email",
+          "type": "input-email",
+          "label": "邮箱："
         }
       ],
       "actions": [],
@@ -399,7 +408,7 @@
                 {
                   "type": "input-time",
                   "label": "反应发生时间：",
-                  "name": "globalData.date",
+                  "name": "date",
                   "id": "u:7e75a3c9487c",
                   "placeholder": "请选择时间",
                   "valueFormat": "X",
@@ -430,7 +439,7 @@
                 {
                   "type": "input-time",
                   "label": "反应终止时间：",
-                  "name": "globalData.date1",
+                  "name": "date1",
                   "id": "u:3c5c9130d425",
                   "placeholder": "请选择时间",
                   "valueFormat": "X",
@@ -460,7 +469,7 @@
                 {
                   "type": "input-time",
                   "label": "离开现场时间：",
-                  "name": "globalData.date2",
+                  "name": "date2",
                   "id": "u:514a11e19750",
                   "placeholder": "请选择时间",
                   "valueFormat": "X",
@@ -500,14 +509,15 @@
     }
   ],
   "data": {
-    "globalData": {
-      "name": "kevinzzzzz1111",
-      "gender": "A",
-      "date": "2024-05-31 11:46:20",
-      "date1": "2024-05-31 11:46:20",
-      "date2": "2024-05-31 11:46:20",
-      "identityId": "111111111111111"
-    }
+    "name": "kevinzzzzz1111",
+    "gender": "A",
+    "date": "2024-05-31 11:46:20",
+    "date1": "2024-05-31 11:46:20",
+    "date2": "2024-05-31 11:46:20",
+    "identityId": "111111111111111",
+    "contactTel": "141212314123",
+    "weight": "124",
+    "height": "173"
   },
   "id": "u:1cb7ea6a34e4",
   "asideResizor": false,
