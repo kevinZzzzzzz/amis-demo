@@ -10,7 +10,7 @@ function EditorComp(props: any) {
     const handleMessage = (event: any) => {
       console.log(event, "event----------");
       console.log(domJson, "domJson----------");
-      domJson.data.globalData = event.data.data;
+      domJson.data = event.data.data;
       setDomsJson(domJson);
       setLoading(true);
       setTimeout(() => {
