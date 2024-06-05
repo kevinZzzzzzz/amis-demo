@@ -2,384 +2,44 @@
   "type": "page",
   "body": [
     {
-      "type": "tpl",
-      "id": "u:173daa7ae336",
-      "tpl": "既往史",
-      "inline": true,
-      "wrapperComponent": "h2",
-      "themeCss": {
-        "baseControlClassName": {
-          "padding-and-margin:default": {
-            "marginBottom": "10px",
-            "paddingBottom": "10px"
-          },
-          "border:default": {
-            "bottom-border-style": "solid",
-            "bottom-border-color": "#dcd5d5",
-            "bottom-border-width": "1px"
-          }
-        }
-      }
-    },
-    {
-      "type": "flex",
-      "id": "u:d4fdc7a2470f",
-      "items": [
-        {
-          "type": "container",
-          "body": [
-            {
-              "type": "radios",
-              "label": "是否造血干细胞移植术后：",
-              "name": "radios",
-              "options": [
-                {
-                  "label": "否",
-                  "value": "0"
-                },
-                {
-                  "label": "是",
-                  "value": "1"
-                }
-              ],
-              "id": "u:a6f2c5c8f59d",
-              "mode": "inline",
-              "value": "0",
-              "selectFirst": true
-            }
-          ],
-          "size": "none",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 3,
-            "flexBasis": "0px"
-          },
-          "wrapperBody": false,
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:2351a7b1e8e2"
-        },
-        {
-          "type": "container",
-          "body": [
-            {
-              "type": "select",
-              "label": "供者血型：",
-              "name": "select",
-              "options": [
-                {
-                  "label": "A",
-                  "value": "A"
-                },
-                {
-                  "label": "B",
-                  "value": "B"
-                },
-                {
-                  "label": "O",
-                  "value": "O"
-                },
-                {
-                  "label": "AB",
-                  "value": "AB"
-                }
-              ],
-              "id": "u:2b9322753067",
-              "multiple": false,
-              "mode": "horizontal",
-              "size": "lg",
-              "selectFirst": true,
-              "clearable": true
-            }
-          ],
-          "size": "none",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 9,
-            "flexBasis": "0px"
-          },
-          "wrapperBody": false,
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:eac861cce66e"
-        }
-      ],
-      "style": {
-        "position": "relative",
-        "rowGap": "10px",
-        "columnGap": "10px",
-        "flexWrap": "nowrap",
-        "inset": "auto"
-      },
-      "isFixedHeight": false,
-      "isFixedWidth": false,
-      "themeCss": {
-        "baseControlClassName": {
-          "padding-and-margin:default": {
-            "marginBottom": "20px"
-          }
-        }
-      }
-    },
-    {
-      "type": "flex",
-      "id": "u:710e189fe02f",
-      "items": [
-        {
-          "type": "container",
-          "body": [
-            {
-              "type": "radios",
-              "label": "是否有经血传染病：",
-              "name": "radios1",
-              "options": [
-                {
-                  "label": "否",
-                  "value": "0"
-                },
-                {
-                  "label": "是",
-                  "value": "1"
-                }
-              ],
-              "id": "u:64c5ced62f7d",
-              "mode": "inline",
-              "value": "0",
-              "selectFirst": true
-            }
-          ],
-          "size": "none",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 3,
-            "flexBasis": "0px"
-          },
-          "wrapperBody": false,
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:608d4e29cf3d"
-        },
-        {
-          "type": "container",
-          "body": [
-            {
-              "type": "checkboxes",
-              "label": "经血传染病：",
-              "name": "checkboxes1",
-              "multiple": true,
-              "options": [
-                {
-                  "label": "HIV",
-                  "value": "1"
-                },
-                {
-                  "label": "HCV",
-                  "value": "2"
-                },
-                {
-                  "label": "HBV",
-                  "value": "3"
-                },
-                {
-                  "label": "TP",
-                  "value": "4"
-                },
-                {
-                  "label": "其他",
-                  "value": "5"
-                }
-              ],
-              "id": "u:edb2cb22ebb3",
-              "checkAll": false,
-              "joinValues": true,
-              "mode": "inline",
-              "visibleOn": ""
-            },
-            {
-              "type": "input-text",
-              "label": "",
-              "name": "text",
-              "id": "u:216671613f70",
-              "mode": "inline",
-              "size": "lg",
-              "visible": true,
-              "hiddenOn": "${!CONTAINS(checkboxes1, '5')}",
-              "placeholder": "请输入"
-            }
-          ],
-          "size": "none",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 9,
-            "flexBasis": "0px"
-          },
-          "wrapperBody": false,
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:3c78e47afcd6"
-        }
-      ],
-      "style": {
-        "position": "relative",
-        "rowGap": "10px",
-        "columnGap": "10px",
-        "flexWrap": "nowrap",
-        "inset": "auto"
-      },
-      "isFixedHeight": false,
-      "isFixedWidth": false,
-      "themeCss": {
-        "baseControlClassName": {
-          "padding-and-margin:default": {
-            "marginBottom": "20px"
-          }
-        }
-      }
-    },
-    {
-      "type": "flex",
-      "items": [
-        {
-          "type": "container",
-          "body": [
-            {
-              "type": "radios",
-              "label": "是否患有导致免疫性血小板减少的疾病：",
-              "name": "radios2",
-              "options": [
-                {
-                  "label": "否",
-                  "value": "0"
-                },
-                {
-                  "label": "是",
-                  "value": "1"
-                }
-              ],
-              "id": "u:71f2ae53c3e7",
-              "mode": "inline",
-              "value": "1",
-              "selectFirst": true
-            },
-            {
-              "type": "checkboxes",
-              "label": "",
-              "name": "checkboxes2",
-              "multiple": true,
-              "options": [
-                {
-                  "label": "ITP",
-                  "value": "1"
-                },
-                {
-                  "label": "SLE",
-                  "value": "2"
-                },
-                {
-                  "label": "EVENS",
-                  "value": "3"
-                },
-                {
-                  "label": "免疫型全血细胞减少",
-                  "value": "4"
-                },
-                {
-                  "label": "其他",
-                  "value": "5"
-                }
-              ],
-              "id": "u:685110aa91ed",
-              "checkAll": false,
-              "joinValues": true,
-              "mode": "inline",
-              "disabledOn": "${radios2!= 1}",
-              "visible": true
-            },
-            {
-              "type": "input-text",
-              "label": "",
-              "name": "text",
-              "id": "u:153268d4360b",
-              "mode": "inline",
-              "size": "lg",
-              "visible": true,
-              "hiddenOn": "${!CONTAINS(checkboxes2, '5')}",
-              "placeholder": "请输入"
-            }
-          ],
-          "size": "none",
-          "style": {
-            "position": "static",
-            "display": "block",
-            "flex": "1 1 auto",
-            "flexGrow": 9,
-            "flexBasis": "0px"
-          },
-          "wrapperBody": false,
-          "isFixedHeight": false,
-          "isFixedWidth": false,
-          "id": "u:fc5cb790a82a"
-        }
-      ],
-      "style": {
-        "position": "relative",
-        "rowGap": "10px",
-        "columnGap": "10px",
-        "flexWrap": "nowrap",
-        "inset": "auto"
-      },
-      "id": "u:a6a38295e166",
-      "isFixedHeight": false,
-      "isFixedWidth": false,
-      "themeCss": {
-        "baseControlClassName": {
-          "padding-and-margin:default": {
-            "marginBottom": "20px"
-          }
-        }
-      }
-    },
-    {
-      "type": "tpl",
-      "id": "u:e4aa08349b57",
-      "tpl": "输血史",
-      "inline": true,
-      "wrapperComponent": "h2",
-      "themeCss": {
-        "baseControlClassName": {
-          "padding-and-margin:default": {
-            "marginBottom": "10px",
-            "paddingBottom": "10px"
-          },
-          "border:default": {
-            "bottom-border-style": "solid",
-            "bottom-border-color": "#dcd5d5",
-            "bottom-border-width": "1px"
-          }
-        }
-      }
-    },
-    {
-      "type": "container",
+      "id": "u:58f379889003",
+      "type": "form",
+      "title": "",
+      "mode": "horizontal",
+      "dsType": "api",
+      "feat": "Insert",
       "body": [
         {
+          "type": "tpl",
+          "id": "u:173daa7ae336",
+          "tpl": "既往史",
+          "inline": true,
+          "wrapperComponent": "h2",
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "10px",
+                "paddingBottom": "10px"
+              },
+              "border:default": {
+                "bottom-border-style": "solid",
+                "bottom-border-color": "#dcd5d5",
+                "bottom-border-width": "1px"
+              }
+            }
+          }
+        },
+        {
           "type": "flex",
+          "id": "u:d4fdc7a2470f",
           "items": [
             {
               "type": "container",
               "body": [
                 {
                   "type": "radios",
-                  "label": "输血史：",
-                  "name": "radios3",
+                  "label": "是否造血干细胞移植术后：",
+                  "name": "radios",
                   "options": [
                     {
                       "label": "否",
@@ -388,13 +48,9 @@
                     {
                       "label": "是",
                       "value": "1"
-                    },
-                    {
-                      "label": "不详",
-                      "value": "2"
                     }
                   ],
-                  "id": "u:0ea6beb4ca2c",
+                  "id": "u:a6f2c5c8f59d",
                   "mode": "inline",
                   "value": "0",
                   "selectFirst": true
@@ -405,24 +61,45 @@
                 "position": "static",
                 "display": "block",
                 "flex": "1 1 auto",
-                "flexGrow": 1,
-                "flexBasis": 0
+                "flexGrow": 3,
+                "flexBasis": "0px"
               },
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:d294faa73951"
+              "id": "u:2351a7b1e8e2"
             },
             {
               "type": "container",
               "body": [
                 {
-                  "type": "button",
-                  "label": "增加品种",
-                  "target": "transfusion",
-                  "actionType": "add",
-                  "id": "u:3890c6f87832",
-                  "level": "primary"
+                  "type": "select",
+                  "label": "供者血型：",
+                  "name": "select",
+                  "options": [
+                    {
+                      "label": "A",
+                      "value": "A"
+                    },
+                    {
+                      "label": "B",
+                      "value": "B"
+                    },
+                    {
+                      "label": "O",
+                      "value": "O"
+                    },
+                    {
+                      "label": "AB",
+                      "value": "AB"
+                    }
+                  ],
+                  "id": "u:2b9322753067",
+                  "multiple": false,
+                  "mode": "horizontal",
+                  "size": "lg",
+                  "selectFirst": true,
+                  "clearable": true
                 }
               ],
               "size": "none",
@@ -430,28 +107,13 @@
                 "position": "static",
                 "display": "block",
                 "flex": "1 1 auto",
-                "flexGrow": 1,
-                "flexBasis": 0
+                "flexGrow": 9,
+                "flexBasis": "0px"
               },
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:c68a3d78220b"
-            },
-            {
-              "type": "container",
-              "size": "none",
-              "style": {
-                "position": "static",
-                "display": "block",
-                "flex": "1 1 auto",
-                "flexGrow": 1,
-                "flexBasis": 0
-              },
-              "wrapperBody": false,
-              "isFixedHeight": false,
-              "isFixedWidth": false,
-              "id": "u:0dd4edfdea65"
+              "id": "u:eac861cce66e"
             }
           ],
           "style": {
@@ -461,7 +123,6 @@
             "flexWrap": "nowrap",
             "inset": "auto"
           },
-          "id": "u:ed48c5e59a36",
           "isFixedHeight": false,
           "isFixedWidth": false,
           "themeCss": {
@@ -471,185 +132,553 @@
               }
             }
           }
-        }
-      ],
-      "size": "none",
-      "style": {
-        "position": "static",
-        "display": "block",
-        "flex": "1 1 auto",
-        "flexGrow": 3,
-        "flexBasis": "0px"
-      },
-      "wrapperBody": false,
-      "isFixedHeight": false,
-      "isFixedWidth": false,
-      "id": "u:a5b0065501d3"
-    },
-    {
-      "type": "flex",
-      "items": [
+        },
+        {
+          "type": "flex",
+          "id": "u:710e189fe02f",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "是否有经血传染病：",
+                  "name": "radios1",
+                  "options": [
+                    {
+                      "label": "否",
+                      "value": "0"
+                    },
+                    {
+                      "label": "是",
+                      "value": "1"
+                    }
+                  ],
+                  "id": "u:64c5ced62f7d",
+                  "mode": "inline",
+                  "value": "0",
+                  "selectFirst": true
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 3,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:608d4e29cf3d"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "checkboxes",
+                  "label": "经血传染病：",
+                  "name": "checkboxes1",
+                  "multiple": true,
+                  "options": [
+                    {
+                      "label": "HIV",
+                      "value": "1"
+                    },
+                    {
+                      "label": "HCV",
+                      "value": "2"
+                    },
+                    {
+                      "label": "HBV",
+                      "value": "3"
+                    },
+                    {
+                      "label": "TP",
+                      "value": "4"
+                    },
+                    {
+                      "label": "其他",
+                      "value": "5"
+                    }
+                  ],
+                  "id": "u:edb2cb22ebb3",
+                  "checkAll": false,
+                  "joinValues": true,
+                  "mode": "inline",
+                  "visibleOn": ""
+                },
+                {
+                  "type": "input-text",
+                  "label": "",
+                  "name": "text",
+                  "id": "u:216671613f70",
+                  "mode": "inline",
+                  "size": "lg",
+                  "visible": true,
+                  "hiddenOn": "${!CONTAINS(checkboxes1, '5')}",
+                  "placeholder": "请输入"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 9,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:3c78e47afcd6"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "是否患有导致免疫性血小板减少的疾病：",
+                  "name": "radios2",
+                  "options": [
+                    {
+                      "label": "否",
+                      "value": "0"
+                    },
+                    {
+                      "label": "是",
+                      "value": "1"
+                    }
+                  ],
+                  "id": "u:71f2ae53c3e7",
+                  "mode": "inline",
+                  "value": "1",
+                  "selectFirst": true
+                },
+                {
+                  "type": "checkboxes",
+                  "label": "",
+                  "name": "checkboxes2",
+                  "multiple": true,
+                  "options": [
+                    {
+                      "label": "ITP",
+                      "value": "1"
+                    },
+                    {
+                      "label": "SLE",
+                      "value": "2"
+                    },
+                    {
+                      "label": "EVENS",
+                      "value": "3"
+                    },
+                    {
+                      "label": "免疫型全血细胞减少",
+                      "value": "4"
+                    },
+                    {
+                      "label": "其他",
+                      "value": "5"
+                    }
+                  ],
+                  "id": "u:685110aa91ed",
+                  "checkAll": false,
+                  "joinValues": true,
+                  "mode": "inline",
+                  "disabledOn": "${radios2!= 1}",
+                  "visible": true
+                },
+                {
+                  "type": "input-text",
+                  "label": "",
+                  "name": "text",
+                  "id": "u:153268d4360b",
+                  "mode": "inline",
+                  "size": "lg",
+                  "visible": true,
+                  "hiddenOn": "${!CONTAINS(checkboxes2, '5')}",
+                  "placeholder": "请输入"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 9,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:fc5cb790a82a"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "id": "u:a6a38295e166",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "tpl",
+          "id": "u:e4aa08349b57",
+          "tpl": "输血史",
+          "inline": true,
+          "wrapperComponent": "h2",
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "10px",
+                "paddingBottom": "10px"
+              },
+              "border:default": {
+                "bottom-border-style": "solid",
+                "bottom-border-color": "#dcd5d5",
+                "bottom-border-width": "1px"
+              }
+            }
+          }
+        },
         {
           "type": "container",
           "body": [
             {
-              "type": "input-table",
-              "name": "transfusion",
-              "columns": [
+              "type": "flex",
+              "items": [
                 {
-                  "type": "select",
-                  "label": "输血品种",
-                  "name": "name1",
-                  "id": "u:cc0b3a2b017d",
-                  "placeholder": "请选择",
-                  "options": [
+                  "type": "container",
+                  "body": [
                     {
-                      "label": "A",
-                      "value": "A"
-                    },
-                    {
-                      "label": "B",
-                      "value": "B"
-                    },
-                    {
-                      "label": "O",
-                      "value": "O"
-                    },
-                    {
-                      "label": "AB",
-                      "value": "AB"
+                      "type": "radios",
+                      "label": "输血史：",
+                      "name": "radios3",
+                      "options": [
+                        {
+                          "label": "否",
+                          "value": "0"
+                        },
+                        {
+                          "label": "是",
+                          "value": "1"
+                        },
+                        {
+                          "label": "不详",
+                          "value": "2"
+                        }
+                      ],
+                      "id": "u:0ea6beb4ca2c",
+                      "mode": "inline",
+                      "value": "0",
+                      "selectFirst": true
                     }
-                  ]
+                  ],
+                  "size": "none",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": 0
+                  },
+                  "wrapperBody": false,
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:d294faa73951"
                 },
                 {
-                  "type": "select",
-                  "label": "ABO血型",
-                  "name": "name2",
-                  "id": "u:e286138c6aed",
-                  "options": [
+                  "type": "container",
+                  "body": [
                     {
-                      "label": "A",
-                      "value": "A"
-                    },
-                    {
-                      "label": "B",
-                      "value": "B"
-                    },
-                    {
-                      "label": "O",
-                      "value": "O"
-                    },
-                    {
-                      "label": "AB",
-                      "value": "AB"
+                      "type": "button",
+                      "label": "增加品种",
+                      "target": "transfusion",
+                      "actionType": "add",
+                      "id": "u:3890c6f87832",
+                      "level": "primary"
                     }
-                  ]
+                  ],
+                  "size": "none",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": 0
+                  },
+                  "wrapperBody": false,
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:c68a3d78220b"
                 },
                 {
-                  "type": "select",
-                  "label": "Rh(D)血型",
-                  "name": "name3",
-                  "id": "u:188144ae1487",
-                  "options": [
-                    {
-                      "label": "A",
-                      "value": "A"
-                    },
-                    {
-                      "label": "B",
-                      "value": "B"
-                    },
-                    {
-                      "label": "O",
-                      "value": "O"
-                    },
-                    {
-                      "label": "AB",
-                      "value": "AB"
-                    }
-                  ]
-                },
-                {
-                  "type": "select",
-                  "label": "输血量",
-                  "name": "name4",
-                  "id": "u:4316fe2c6a12",
-                  "options": [
-                    {
-                      "label": "A",
-                      "value": "A"
-                    },
-                    {
-                      "label": "B",
-                      "value": "B"
-                    },
-                    {
-                      "label": "O",
-                      "value": "O"
-                    },
-                    {
-                      "label": "AB",
-                      "value": "AB"
-                    }
-                  ]
-                },
-                {
-                  "type": "radios",
-                  "label": "输血效果",
-                  "name": "radio5",
-                  "id": "u:0c1efda6440b",
-                  "value": "1",
-                  "options": [
-                    {
-                      "label": "良好",
-                      "value": "0"
-                    },
-                    {
-                      "label": "无效",
-                      "value": "1"
-                    },
-                    {
-                      "label": "不确定",
-                      "value": "2"
-                    }
-                  ]
+                  "type": "container",
+                  "size": "none",
+                  "style": {
+                    "position": "static",
+                    "display": "block",
+                    "flex": "1 1 auto",
+                    "flexGrow": 1,
+                    "flexBasis": 0
+                  },
+                  "wrapperBody": false,
+                  "isFixedHeight": false,
+                  "isFixedWidth": false,
+                  "id": "u:0dd4edfdea65"
                 }
               ],
-              "id": "u:66701a0d2798",
-              "needConfirm": false,
-              "minLength": 0,
-              "showFooterAddBtn": false,
-              "columnsTogglable": false,
-              "label": "",
-              "addable": true,
-              "hidden": false,
-              "showTableAddBtn": false,
-              "addBtnIcon": ""
+              "style": {
+                "position": "relative",
+                "rowGap": "10px",
+                "columnGap": "10px",
+                "flexWrap": "nowrap",
+                "inset": "auto"
+              },
+              "id": "u:ed48c5e59a36",
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "themeCss": {
+                "baseControlClassName": {
+                  "padding-and-margin:default": {
+                    "marginBottom": "20px"
+                  }
+                }
+              }
             }
           ],
           "size": "none",
           "style": {
             "position": "static",
-            "display": "flex",
+            "display": "block",
             "flex": "1 1 auto",
-            "flexGrow": 1,
-            "flexBasis": "0px",
-            "flexWrap": "nowrap",
-            "justifyContent": "flex-start",
-            "flexDirection": "row"
+            "flexGrow": 3,
+            "flexBasis": "0px"
           },
           "wrapperBody": false,
           "isFixedHeight": false,
           "isFixedWidth": false,
-          "id": "u:65226a9c9ed8"
+          "id": "u:a5b0065501d3"
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-table",
+                  "name": "transfusion",
+                  "columns": [
+                    {
+                      "type": "select",
+                      "label": "输血品种",
+                      "name": "name1",
+                      "id": "u:cc0b3a2b017d",
+                      "placeholder": "请选择",
+                      "options": [
+                        {
+                          "label": "A",
+                          "value": "A"
+                        },
+                        {
+                          "label": "B",
+                          "value": "B"
+                        },
+                        {
+                          "label": "O",
+                          "value": "O"
+                        },
+                        {
+                          "label": "AB",
+                          "value": "AB"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "select",
+                      "label": "ABO血型",
+                      "name": "name2",
+                      "id": "u:e286138c6aed",
+                      "options": [
+                        {
+                          "label": "A",
+                          "value": "A"
+                        },
+                        {
+                          "label": "B",
+                          "value": "B"
+                        },
+                        {
+                          "label": "O",
+                          "value": "O"
+                        },
+                        {
+                          "label": "AB",
+                          "value": "AB"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "select",
+                      "label": "Rh(D)血型",
+                      "name": "name3",
+                      "id": "u:188144ae1487",
+                      "options": [
+                        {
+                          "label": "A",
+                          "value": "A"
+                        },
+                        {
+                          "label": "B",
+                          "value": "B"
+                        },
+                        {
+                          "label": "O",
+                          "value": "O"
+                        },
+                        {
+                          "label": "AB",
+                          "value": "AB"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "select",
+                      "label": "输血量",
+                      "name": "name4",
+                      "id": "u:4316fe2c6a12",
+                      "options": [
+                        {
+                          "label": "A",
+                          "value": "A"
+                        },
+                        {
+                          "label": "B",
+                          "value": "B"
+                        },
+                        {
+                          "label": "O",
+                          "value": "O"
+                        },
+                        {
+                          "label": "AB",
+                          "value": "AB"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "radios",
+                      "label": "输血效果",
+                      "name": "radio5",
+                      "id": "u:0c1efda6440b",
+                      "value": "1",
+                      "options": [
+                        {
+                          "label": "良好",
+                          "value": "0"
+                        },
+                        {
+                          "label": "无效",
+                          "value": "1"
+                        },
+                        {
+                          "label": "不确定",
+                          "value": "2"
+                        }
+                      ]
+                    }
+                  ],
+                  "id": "u:66701a0d2798",
+                  "needConfirm": false,
+                  "minLength": 0,
+                  "showFooterAddBtn": false,
+                  "columnsTogglable": false,
+                  "label": "",
+                  "addable": true,
+                  "hidden": false,
+                  "showTableAddBtn": false,
+                  "addBtnIcon": ""
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "flex",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px",
+                "flexWrap": "nowrap",
+                "justifyContent": "flex-start",
+                "flexDirection": "row"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:65226a9c9ed8"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px"
+          },
+          "id": "u:e364dd8fabd9"
         }
       ],
-      "style": {
-        "position": "relative",
-        "rowGap": "10px",
-        "columnGap": "10px"
-      },
-      "id": "u:e364dd8fabd9"
+      "actions": [
+        {
+          "type": "button",
+          "label": "提交",
+          "onEvent": {
+            "click": {
+              "actions": [
+                {
+                  "actionType": "submit",
+                  "componentId": "u:58f379889003"
+                }
+              ]
+            }
+          },
+          "level": "primary",
+          "id": "u:efbee467c13b"
+        }
+      ],
+      "resetAfterSubmit": true
     }
   ],
   "actions": [
