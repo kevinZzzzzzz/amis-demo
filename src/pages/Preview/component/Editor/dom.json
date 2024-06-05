@@ -3,10 +3,10 @@
   "body": [
     {
       "type": "tpl",
+      "id": "u:173daa7ae336",
       "tpl": "既往史",
       "inline": true,
       "wrapperComponent": "h2",
-      "id": "u:173daa7ae336",
       "themeCss": {
         "baseControlClassName": {
           "padding-and-margin:default": {
@@ -23,6 +23,7 @@
     },
     {
       "type": "flex",
+      "id": "u:d4fdc7a2470f",
       "items": [
         {
           "type": "container",
@@ -114,7 +115,6 @@
         "flexWrap": "nowrap",
         "inset": "auto"
       },
-      "id": "u:d4fdc7a2470f",
       "isFixedHeight": false,
       "isFixedWidth": false,
       "themeCss": {
@@ -127,6 +127,7 @@
     },
     {
       "type": "flex",
+      "id": "u:710e189fe02f",
       "items": [
         {
           "type": "container",
@@ -233,7 +234,6 @@
         "flexWrap": "nowrap",
         "inset": "auto"
       },
-      "id": "u:710e189fe02f",
       "isFixedHeight": false,
       "isFixedWidth": false,
       "themeCss": {
@@ -346,18 +346,352 @@
           }
         }
       }
+    },
+    {
+      "type": "tpl",
+      "id": "u:e4aa08349b57",
+      "tpl": "输血史",
+      "inline": true,
+      "wrapperComponent": "h2",
+      "themeCss": {
+        "baseControlClassName": {
+          "padding-and-margin:default": {
+            "marginBottom": "10px",
+            "paddingBottom": "10px"
+          },
+          "border:default": {
+            "bottom-border-style": "solid",
+            "bottom-border-color": "#dcd5d5",
+            "bottom-border-width": "1px"
+          }
+        }
+      }
+    },
+    {
+      "type": "container",
+      "body": [
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "输血史：",
+                  "name": "radios3",
+                  "options": [
+                    {
+                      "label": "否",
+                      "value": "0"
+                    },
+                    {
+                      "label": "是",
+                      "value": "1"
+                    },
+                    {
+                      "label": "不详",
+                      "value": "2"
+                    }
+                  ],
+                  "id": "u:0ea6beb4ca2c",
+                  "mode": "inline",
+                  "value": "0",
+                  "selectFirst": true
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:d294faa73951"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "button",
+                  "label": "增加品种",
+                  "onEvent": {
+                    "click": {
+                      "actions": [
+                        {
+                          "reload": "transfusionCrud",
+                          "ignoreError": false,
+                          "script": "/* 自定义JS使用说明：\n  * 1.动作执行函数doAction，可以执行所有类型的动作\n  * 2.通过上下文对象context可以获取当前组件实例，例如context.props可以获取该组件相关属性\n  * 3.事件对象event，在doAction之后执行event.stopPropagation();可以阻止后续动作执行\n*/\ncontext.props.data.transfusion.push({\n  \"name1\": \"A\",\n  \"name2\": \"\",\n  \"name3\": \"\",\n  \"name4\": \"\",\n  \"radio5\": \"1\"\n})\nconsole.log(context.props.data.transfusion)\n",
+                          "actionType": "custom",
+                          "args": {}
+                        },
+                        {
+                          "componentId": "crudId",
+                          "ignoreError": false,
+                          "actionType": "reload",
+                          "dataMergeMode": "override",
+                          "args": {
+                            "resetPage": true
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "id": "u:3890c6f87832",
+                  "level": "enhance",
+                  "target": "transfusions"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:c68a3d78220b"
+            },
+            {
+              "type": "container",
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:0dd4edfdea65"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px"
+          },
+          "id": "u:ed48c5e59a36"
+        }
+      ],
+      "size": "none",
+      "style": {
+        "position": "static",
+        "display": "block",
+        "flex": "1 1 auto",
+        "flexGrow": 3,
+        "flexBasis": "0px"
+      },
+      "wrapperBody": false,
+      "isFixedHeight": false,
+      "isFixedWidth": false,
+      "id": "u:a5b0065501d3"
+    },
+    {
+      "type": "flex",
+      "items": [
+        {
+          "type": "container",
+          "body": [
+            {
+              "id": "crudId",
+              "type": "crud",
+              "syncLocation": false,
+              "api": "",
+              "name": "transfusionCrud",
+              "data": {
+                "items": "${transfusion}"
+              },
+              "columns": [
+                {
+                  "type": "select",
+                  "label": "输血品种",
+                  "name": "name1",
+                  "id": "u:cc0b3a2b017d",
+                  "placeholder": "请选择",
+                  "options": [
+                    {
+                      "label": "A",
+                      "value": "A"
+                    },
+                    {
+                      "label": "B",
+                      "value": "B"
+                    },
+                    {
+                      "label": "O",
+                      "value": "O"
+                    },
+                    {
+                      "label": "AB",
+                      "value": "AB"
+                    }
+                  ]
+                },
+                {
+                  "type": "select",
+                  "label": "ABO血型",
+                  "name": "name2",
+                  "id": "u:e286138c6aed",
+                  "options": [
+                    {
+                      "label": "A",
+                      "value": "A"
+                    },
+                    {
+                      "label": "B",
+                      "value": "B"
+                    },
+                    {
+                      "label": "O",
+                      "value": "O"
+                    },
+                    {
+                      "label": "AB",
+                      "value": "AB"
+                    }
+                  ]
+                },
+                {
+                  "type": "select",
+                  "label": "Rh(D)血型",
+                  "name": "name3",
+                  "id": "u:188144ae1487",
+                  "options": [
+                    {
+                      "label": "A",
+                      "value": "A"
+                    },
+                    {
+                      "label": "B",
+                      "value": "B"
+                    },
+                    {
+                      "label": "O",
+                      "value": "O"
+                    },
+                    {
+                      "label": "AB",
+                      "value": "AB"
+                    }
+                  ]
+                },
+                {
+                  "type": "select",
+                  "label": "输血量",
+                  "name": "name4",
+                  "id": "u:4316fe2c6a12",
+                  "options": [
+                    {
+                      "label": "A",
+                      "value": "A"
+                    },
+                    {
+                      "label": "B",
+                      "value": "B"
+                    },
+                    {
+                      "label": "O",
+                      "value": "O"
+                    },
+                    {
+                      "label": "AB",
+                      "value": "AB"
+                    }
+                  ]
+                },
+                {
+                  "type": "radios",
+                  "label": "输血效果",
+                  "name": "radio5",
+                  "id": "u:0c1efda6440b",
+                  "options": [
+                    {
+                      "label": "良好",
+                      "value": "0"
+                    },
+                    {
+                      "label": "无效",
+                      "value": "1"
+                    },
+                    {
+                      "label": "不确定",
+                      "value": "2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "size": "none",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 11,
+            "flexBasis": "0px"
+          },
+          "wrapperBody": false,
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:65226a9c9ed8"
+        },
+        {
+          "type": "container",
+          "body": [],
+          "size": "none",
+          "style": {
+            "position": "static",
+            "display": "block",
+            "flex": "1 1 auto",
+            "flexGrow": 3,
+            "flexBasis": 0
+          },
+          "wrapperBody": false,
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "id": "u:578e2aa526c5"
+        }
+      ],
+      "style": {
+        "position": "relative",
+        "rowGap": "10px",
+        "columnGap": "10px"
+      },
+      "id": "u:e364dd8fabd9"
     }
   ],
   "data": {
-    "name": "",
-    "gender": "",
-    "date": "",
-    "date1": "",
-    "date2": "",
-    "identityId": "",
-    "contactTel": "",
-    "weight": "",
-    "height": ""
+    "radios": "1",
+    "select": "A",
+    "radios1": "1",
+    "radios2": "1",
+    "radios3": "0",
+    "transfusion": [
+      {
+        "name1": "A",
+        "name2": "",
+        "name3": "",
+        "name4": "",
+        "radio5": "1"
+      },
+      {
+        "name1": "A",
+        "name2": "",
+        "name3": "",
+        "name4": "",
+        "radio5": "1"
+      }
+    ]
   },
   "id": "u:1cb7ea6a34e4",
   "asideResizor": false,
