@@ -6,21 +6,22 @@ function EditorComp(props: any) {
   const [domsJson, setDomsJson] = useState(domJson);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
-    console.log(111111111, window.self !== window.top);
-    const handleMessage = (event: any) => {
-      console.log(event, "event----------");
-      console.log(domJson, "domJson----------");
-      domJson.data.globalData = event.data.data;
-      setDomsJson(domJson);
-      setLoading(true);
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000);
-    };
-    window.addEventListener("message", handleMessage, false);
+    // console.log(111111111, window.self !== window.top);
+    // const handleMessage = (event: any) => {
+    //   console.log(event, "event----------");
+    //   console.log(domJson, "domJson----------");
+    //   domJson.data = event.data.data;
+    //   setDomsJson(domJson);
+    //   setLoading(true);
+    //   setTimeout(() => {
+    //     setLoading(false);
+    //   }, 2000);
+    // };
+    // window.addEventListener("message", handleMessage, false);
+    setLoading(false);
 
     return () => {
-      window.removeEventListener("message", handleMessage, false);
+      // window.removeEventListener("message", handleMessage, false);
     };
   }, []);
   return (
