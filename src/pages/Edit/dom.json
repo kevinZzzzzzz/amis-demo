@@ -39,7 +39,7 @@
                 {
                   "type": "radios",
                   "label": "是否造血干细胞移植术后：",
-                  "name": "radios",
+                  "name": "afterCellTransplant",
                   "options": [
                     {
                       "label": "否",
@@ -75,7 +75,7 @@
                 {
                   "type": "select",
                   "label": "供者血型：",
-                  "name": "select",
+                  "name": "donorBloodType",
                   "options": [
                     {
                       "label": "A",
@@ -143,7 +143,7 @@
                 {
                   "type": "radios",
                   "label": "是否有经血传染病：",
-                  "name": "radios1",
+                  "name": "hasMenstrualBloodInfections",
                   "options": [
                     {
                       "label": "否",
@@ -179,28 +179,28 @@
                 {
                   "type": "checkboxes",
                   "label": "经血传染病：",
-                  "name": "checkboxes1",
+                  "name": "menstrualBloodInfection",
                   "multiple": true,
                   "options": [
                     {
                       "label": "HIV",
-                      "value": "1"
+                      "value": "HIV"
                     },
                     {
                       "label": "HCV",
-                      "value": "2"
+                      "value": "HCV"
                     },
                     {
                       "label": "HBV",
-                      "value": "3"
+                      "value": "HBV"
                     },
                     {
                       "label": "TP",
-                      "value": "4"
+                      "value": "TP"
                     },
                     {
                       "label": "其他",
-                      "value": "5"
+                      "value": "其他"
                     }
                   ],
                   "id": "u:edb2cb22ebb3",
@@ -212,12 +212,12 @@
                 {
                   "type": "input-text",
                   "label": "",
-                  "name": "text",
+                  "name": "menstrualBloodInfectionOther",
                   "id": "u:216671613f70",
                   "mode": "inline",
                   "size": "lg",
                   "visible": true,
-                  "hiddenOn": "${!CONTAINS(checkboxes1, '5')}",
+                  "hiddenOn": "${!CONTAINS(menstrualBloodInfection, '其他')}",
                   "placeholder": "请输入"
                 }
               ],
@@ -261,7 +261,7 @@
                 {
                   "type": "radios",
                   "label": "是否患有导致免疫性血小板减少的疾病：",
-                  "name": "radios2",
+                  "name": "causesImmuneThrombocytopenia",
                   "options": [
                     {
                       "label": "否",
@@ -280,46 +280,153 @@
                 {
                   "type": "checkboxes",
                   "label": "",
-                  "name": "checkboxes2",
+                  "name": "causesImmuneThrombocytopeniaType",
                   "multiple": true,
                   "options": [
                     {
                       "label": "ITP",
-                      "value": "1"
+                      "value": "ITP"
                     },
                     {
                       "label": "SLE",
-                      "value": "2"
+                      "value": "SLE"
                     },
                     {
                       "label": "EVENS",
-                      "value": "3"
+                      "value": "EVENS"
                     },
                     {
                       "label": "免疫型全血细胞减少",
-                      "value": "4"
+                      "value": "免疫型全血细胞减少"
                     },
                     {
                       "label": "其他",
-                      "value": "5"
+                      "value": "其他"
                     }
                   ],
                   "id": "u:685110aa91ed",
                   "checkAll": false,
                   "joinValues": true,
                   "mode": "inline",
-                  "disabledOn": "${radios2!= 1}",
+                  "disabledOn": "${causesImmuneThrombocytopenia != '1'}",
                   "visible": true
                 },
                 {
                   "type": "input-text",
                   "label": "",
-                  "name": "text",
+                  "name": "causesImmuneThrombocytopeniaOther",
                   "id": "u:153268d4360b",
                   "mode": "inline",
                   "size": "lg",
                   "visible": true,
-                  "hiddenOn": "${!CONTAINS(checkboxes2, '5')}",
+                  "hiddenOn": "${!CONTAINS(causesImmuneThrombocytopeniaType, '其他')}",
+                  "placeholder": "请输入"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 9,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:fc5cb790a82a"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "id": "u:a6a38295e166",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "是否存在导致血小板减少的原因",
+                  "name": "hasReasonOfPlateletDdecrease",
+                  "options": [
+                    {
+                      "label": "否",
+                      "value": "0"
+                    },
+                    {
+                      "label": "是",
+                      "value": "1"
+                    }
+                  ],
+                  "id": "u:71f2ae53c3e7",
+                  "mode": "inline",
+                  "value": "1",
+                  "selectFirst": true
+                },
+                {
+                  "type": "checkboxes",
+                  "label": "",
+                  "name": "reasonOfPlateletDdecrease",
+                  "multiple": true,
+                  "options": [
+                    {
+                      "label": "出血",
+                      "value": "出血"
+                    },
+                    {
+                      "label": "发热",
+                      "value": "发热"
+                    },
+                    {
+                      "label": "感染",
+                      "value": "感染"
+                    },
+                    {
+                      "label": "脾大",
+                      "value": "脾大"
+                    },
+                    {
+                      "label": "DIC",
+                      "value": "DIC"
+                    },
+                    {
+                      "label": "其他",
+                      "value": "其他"
+                    }
+                  ],
+                  "id": "u:685110aa91ed",
+                  "checkAll": false,
+                  "joinValues": true,
+                  "mode": "inline",
+                  "disabledOn": "${hasReasonOfPlateletDdecrease != '1'}",
+                  "visible": true
+                },
+                {
+                  "type": "input-text",
+                  "label": "",
+                  "name": "reasonOfPlateletDdecreaseOther",
+                  "id": "u:153268d4360b",
+                  "mode": "inline",
+                  "size": "lg",
+                  "visible": true,
+                  "hiddenOn": "${!CONTAINS(reasonOfPlateletDdecrease, '其他')}",
                   "placeholder": "请输入"
                 }
               ],
@@ -387,7 +494,7 @@
                     {
                       "type": "radios",
                       "label": "输血史：",
-                      "name": "radios3",
+                      "name": "hasBloodTransfusion",
                       "options": [
                         {
                           "label": "否",
@@ -495,161 +602,1009 @@
           "id": "u:a5b0065501d3"
         },
         {
+          "type": "input-table",
+          "name": "transfusion",
+          "columns": [
+            {
+              "type": "select",
+              "label": "输血品种",
+              "name": "transfusionType",
+              "id": "u:cc0b3a2b017d",
+              "placeholder": "请选择",
+              "options": [
+                {
+                  "label": "A",
+                  "value": "A"
+                },
+                {
+                  "label": "B",
+                  "value": "B"
+                },
+                {
+                  "label": "O",
+                  "value": "O"
+                },
+                {
+                  "label": "AB",
+                  "value": "AB"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "label": "ABO血型",
+              "name": "transfusionABOType",
+              "id": "u:e286138c6aed",
+              "options": [
+                {
+                  "label": "A",
+                  "value": "A"
+                },
+                {
+                  "label": "B",
+                  "value": "B"
+                },
+                {
+                  "label": "O",
+                  "value": "O"
+                },
+                {
+                  "label": "AB",
+                  "value": "AB"
+                }
+              ]
+            },
+            {
+              "type": "select",
+              "label": "Rh(D)血型",
+              "name": "transfusionRHDType",
+              "id": "u:188144ae1487",
+              "options": [
+                {
+                  "label": "A",
+                  "value": "A"
+                },
+                {
+                  "label": "B",
+                  "value": "B"
+                },
+                {
+                  "label": "O",
+                  "value": "O"
+                },
+                {
+                  "label": "AB",
+                  "value": "AB"
+                }
+              ]
+            },
+            {
+              "type": "input-text",
+              "label": "输血量",
+              "name": "transfusionVolume",
+              "id": "u:4316fe2c6a12",
+              "placeholder": "请输入"
+            },
+            {
+              "type": "radios",
+              "label": "输血效果",
+              "name": "transfusionEffect",
+              "id": "u:0c1efda6440b",
+              "options": [
+                {
+                  "label": "良好",
+                  "value": "0"
+                },
+                {
+                  "label": "无效",
+                  "value": "1"
+                },
+                {
+                  "label": "不确定",
+                  "value": "2"
+                }
+              ]
+            }
+          ],
+          "id": "u:66701a0d2798",
+          "needConfirm": false,
+          "minLength": 0,
+          "showFooterAddBtn": false,
+          "columnsTogglable": false,
+          "label": "",
+          "addable": true,
+          "hidden": false,
+          "showTableAddBtn": false,
+          "addBtnIcon": "",
+          "size": "full",
+          "mode": "normal"
+        },
+        {
           "type": "flex",
           "items": [
             {
               "type": "container",
               "body": [
                 {
-                  "type": "input-table",
-                  "name": "transfusion",
-                  "columns": [
+                  "type": "radios",
+                  "label": "有无输血不良反应：",
+                  "name": "hasBloodTransfusionReaction",
+                  "options": [
                     {
-                      "type": "select",
-                      "label": "输血品种",
-                      "name": "name1",
-                      "id": "u:cc0b3a2b017d",
-                      "placeholder": "请选择",
-                      "options": [
-                        {
-                          "label": "A",
-                          "value": "A"
-                        },
-                        {
-                          "label": "B",
-                          "value": "B"
-                        },
-                        {
-                          "label": "O",
-                          "value": "O"
-                        },
-                        {
-                          "label": "AB",
-                          "value": "AB"
-                        }
-                      ]
+                      "label": "有",
+                      "value": "1"
                     },
                     {
-                      "type": "select",
-                      "label": "ABO血型",
-                      "name": "name2",
-                      "id": "u:e286138c6aed",
-                      "options": [
-                        {
-                          "label": "A",
-                          "value": "A"
-                        },
-                        {
-                          "label": "B",
-                          "value": "B"
-                        },
-                        {
-                          "label": "O",
-                          "value": "O"
-                        },
-                        {
-                          "label": "AB",
-                          "value": "AB"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "select",
-                      "label": "Rh(D)血型",
-                      "name": "name3",
-                      "id": "u:188144ae1487",
-                      "options": [
-                        {
-                          "label": "A",
-                          "value": "A"
-                        },
-                        {
-                          "label": "B",
-                          "value": "B"
-                        },
-                        {
-                          "label": "O",
-                          "value": "O"
-                        },
-                        {
-                          "label": "AB",
-                          "value": "AB"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "select",
-                      "label": "输血量",
-                      "name": "name4",
-                      "id": "u:4316fe2c6a12",
-                      "options": [
-                        {
-                          "label": "A",
-                          "value": "A"
-                        },
-                        {
-                          "label": "B",
-                          "value": "B"
-                        },
-                        {
-                          "label": "O",
-                          "value": "O"
-                        },
-                        {
-                          "label": "AB",
-                          "value": "AB"
-                        }
-                      ]
-                    },
-                    {
-                      "type": "radios",
-                      "label": "输血效果",
-                      "name": "radio5",
-                      "id": "u:0c1efda6440b",
-                      "value": "1",
-                      "options": [
-                        {
-                          "label": "良好",
-                          "value": "0"
-                        },
-                        {
-                          "label": "无效",
-                          "value": "1"
-                        },
-                        {
-                          "label": "不确定",
-                          "value": "2"
-                        }
-                      ]
+                      "label": "无",
+                      "value": "0"
                     }
                   ],
-                  "id": "u:66701a0d2798",
-                  "needConfirm": false,
-                  "minLength": 0,
-                  "showFooterAddBtn": false,
-                  "columnsTogglable": false,
-                  "label": "",
-                  "addable": true,
-                  "hidden": false,
-                  "showTableAddBtn": false,
-                  "addBtnIcon": ""
+                  "id": "u:e2e2cf06b962",
+                  "inline": true,
+                  "mode": "inline"
                 }
               ],
               "size": "none",
               "style": {
                 "position": "static",
-                "display": "flex",
+                "display": "block",
                 "flex": "1 1 auto",
-                "flexGrow": 1,
-                "flexBasis": "0px",
-                "flexWrap": "nowrap",
-                "justifyContent": "flex-start",
-                "flexDirection": "row"
+                "flexGrow": 4,
+                "flexBasis": "0px"
               },
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:65226a9c9ed8"
+              "id": "u:fd89bf58638f"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-text",
+                  "label": "情况简要说明：",
+                  "name": "bloodTransfusionReaction",
+                  "id": "u:1d5aa5e64050",
+                  "placeholder": "请输入",
+                  "hiddenOn": "${hasBloodTransfusionReaction != '1'}"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 8,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:df4047afe1ae"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "id": "u:fe663e0095fb",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "input-text",
+          "label": "其他说明：",
+          "name": "bloodTransfusionReactionOther",
+          "id": "u:1238cf2aa039",
+          "placeholder": "请输入"
+        },
+        {
+          "type": "tpl",
+          "id": "u:e7ae65f74dea",
+          "tpl": "妊娠史",
+          "inline": true,
+          "wrapperComponent": "h2",
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "10px",
+                "paddingBottom": "10px"
+              },
+              "border:default": {
+                "bottom-border-style": "solid",
+                "bottom-border-color": "#dcd5d5",
+                "bottom-border-width": "1px"
+              }
+            }
+          }
+        },
+        {
+          "type": "radios",
+          "label": "妊娠史：",
+          "name": "hasPregnancy",
+          "options": [
+            {
+              "label": "否",
+              "value": "0"
+            },
+            {
+              "label": "是",
+              "value": "1"
+            },
+            {
+              "label": "不详",
+              "value": "2"
+            }
+          ],
+          "id": "u:0e5246c02175",
+          "mode": "horizontal",
+          "value": "0",
+          "selectFirst": true
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-number",
+                  "label": "妊娠：",
+                  "name": "pregnanciesNum",
+                  "keyboard": true,
+                  "id": "u:1431b89dacab",
+                  "step": 1,
+                  "mode": "horizontal",
+                  "suffix": "",
+                  "unitOptions": [
+                    {
+                      "label": "次",
+                      "value": "次"
+                    }
+                  ],
+                  "placeholder": "请输入"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:786ca15514e0"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-number",
+                  "label": "生育子女：",
+                  "name": "childNum",
+                  "keyboard": true,
+                  "id": "u:d08a80837291",
+                  "step": 1,
+                  "mode": "horizontal",
+                  "suffix": "",
+                  "unitOptions": [
+                    {
+                      "label": "个",
+                      "value": "个"
+                    }
+                  ],
+                  "placeholder": "请输入"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:650395dac13b"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-number",
+                  "label": "流产：",
+                  "name": "miscarryNum",
+                  "keyboard": true,
+                  "id": "u:b13d67dc6cd2",
+                  "step": 1,
+                  "mode": "horizontal",
+                  "suffix": "",
+                  "unitOptions": [
+                    {
+                      "label": "个",
+                      "value": "个"
+                    }
+                  ],
+                  "placeholder": "请输入"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:b5024552b9f0"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "flex",
+                  "items": [
+                    {
+                      "type": "container",
+                      "body": [
+                        {
+                          "type": "input-number",
+                          "label": "当前妊娠：",
+                          "name": "pregnancyWeek",
+                          "keyboard": true,
+                          "id": "u:dac0ec0dd2d3",
+                          "step": 1,
+                          "unitOptions": [
+                            {
+                              "label": "周",
+                              "value": "周"
+                            }
+                          ],
+                          "mode": "horizontal",
+                          "size": "sm"
+                        }
+                      ],
+                      "size": "none",
+                      "style": {
+                        "position": "static",
+                        "display": "block",
+                        "flex": "1 1 auto",
+                        "flexGrow": 1,
+                        "flexBasis": "0px"
+                      },
+                      "wrapperBody": false,
+                      "isFixedHeight": false,
+                      "isFixedWidth": false,
+                      "id": "u:dc3bd1e7718d"
+                    },
+                    {
+                      "type": "container",
+                      "body": [
+                        {
+                          "type": "input-number",
+                          "label": "",
+                          "name": "pregnancyDay",
+                          "keyboard": true,
+                          "id": "u:18340673e9e2",
+                          "step": 1,
+                          "unitOptions": [
+                            {
+                              "label": "天",
+                              "value": "天"
+                            }
+                          ],
+                          "mode": "inline"
+                        }
+                      ],
+                      "size": "none",
+                      "style": {
+                        "position": "static",
+                        "display": "block",
+                        "flex": "1 1 auto",
+                        "flexGrow": 1,
+                        "flexBasis": "0px"
+                      },
+                      "wrapperBody": false,
+                      "isFixedHeight": false,
+                      "isFixedWidth": false,
+                      "id": "u:6dd78510a7ca"
+                    }
+                  ],
+                  "style": {
+                    "position": "relative",
+                    "rowGap": "10px",
+                    "columnGap": "10px"
+                  },
+                  "id": "u:0a600e6bdd1c"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:cc8221feb313"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "id": "u:9ad50f2113c5",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginTop": "20px",
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "孕期内是否出现血小板计数减少：",
+                  "name": "decreasedPlateletCount",
+                  "options": [
+                    {
+                      "label": "有",
+                      "value": "1"
+                    },
+                    {
+                      "label": "无",
+                      "value": "0"
+                    }
+                  ],
+                  "id": "u:b7029155ec0e",
+                  "mode": "inline"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 4,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:52e3cc005553"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-text",
+                  "label": "情况简要说明：",
+                  "name": "decreasedPlateletCountDescription ",
+                  "id": "u:95d81b2318aa",
+                  "placeholder": "请输入",
+                  "hiddenOn": "${decreasedPlateletCount != 1}"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 8,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:617f0abcc938"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "id": "u:b5cc7e588a2f",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "前几胎婴儿是否出现水肿：",
+                  "name": "edemaOccurs",
+                  "options": [
+                    {
+                      "label": "有",
+                      "value": "1"
+                    },
+                    {
+                      "label": "无",
+                      "value": "0"
+                    }
+                  ],
+                  "id": "u:cce9acebdcea",
+                  "mode": "inline"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 4,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:5348c7742960"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-text",
+                  "label": "情况简要说明：",
+                  "name": "edemaOccursDescription ",
+                  "id": "u:6cfb1e4e514d",
+                  "placeholder": "请输入",
+                  "hiddenOn": "${edemaOccurs != 1}"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 8,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:c455d6c0b94b"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "id": "u:ab11b8b6eeda",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "tpl",
+          "id": "u:df5578bcb468",
+          "tpl": "新生儿史",
+          "inline": true,
+          "wrapperComponent": "h2",
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "10px",
+                "paddingBottom": "10px"
+              },
+              "border:default": {
+                "bottom-border-style": "solid",
+                "bottom-border-color": "#dcd5d5",
+                "bottom-border-width": "1px"
+              }
+            }
+          }
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "早产：",
+                  "name": "prematureDelivery",
+                  "options": [
+                    {
+                      "label": "是",
+                      "value": "1"
+                    },
+                    {
+                      "label": "否",
+                      "value": "0"
+                    }
+                  ],
+                  "id": "u:ebbaffc33161"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:3ac570665523"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "肺炎：",
+                  "name": "pneumonia",
+                  "options": [
+                    {
+                      "label": "是",
+                      "value": "1"
+                    },
+                    {
+                      "label": "否",
+                      "value": "0"
+                    }
+                  ],
+                  "id": "u:0e609b74dbe2"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:4d9c234e3572"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "黄疸：",
+                  "name": "jaundice",
+                  "options": [
+                    {
+                      "label": "是",
+                      "value": "1"
+                    },
+                    {
+                      "label": "否",
+                      "value": "0"
+                    }
+                  ],
+                  "id": "u:db1a05b5863c"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:c7febe806fd7"
+            },
+            {
+              "type": "container",
+              "body": [],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:a3247e95cc1a"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "id": "u:87a5ef19f0c7",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "皮肤是否出现瘀点/瘀斑：",
+                  "name": "petechiae",
+                  "options": [
+                    {
+                      "label": "是",
+                      "value": "1"
+                    },
+                    {
+                      "label": "否",
+                      "value": "0"
+                    }
+                  ],
+                  "id": "u:e0a30d721bf9",
+                  "mode": "inline"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:322411d07097"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "水肿：",
+                  "name": "edema",
+                  "options": [
+                    {
+                      "label": "是",
+                      "value": "1"
+                    },
+                    {
+                      "label": "否",
+                      "value": "0"
+                    }
+                  ],
+                  "id": "u:3eb08e24dd03"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:4fe628def58e"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "腹水：",
+                  "name": "ascites",
+                  "options": [
+                    {
+                      "label": "是",
+                      "value": "1"
+                    },
+                    {
+                      "label": "否",
+                      "value": "0"
+                    }
+                  ],
+                  "id": "u:4d92ad06ca6b"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:27e4fa9abdb5"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "注射丙种球蛋白：",
+                  "name": "gammaglobulin",
+                  "options": [
+                    {
+                      "label": "是",
+                      "value": "1"
+                    },
+                    {
+                      "label": "否",
+                      "value": "0"
+                    }
+                  ],
+                  "id": "u:31aea6ec4c41",
+                  "mode": "inline"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:b567b6755d1e"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "id": "u:d1d72d04b16b",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-number",
+                  "label": "胆红素：",
+                  "name": "bilirubin",
+                  "keyboard": true,
+                  "id": "u:5ed5b6f727e1",
+                  "step": 1,
+                  "mode": "horizontal",
+                  "suffix": "",
+                  "unitOptions": [
+                    {
+                      "label": "mg/dL",
+                      "value": "个"
+                    }
+                  ],
+                  "placeholder": "请输入"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 4,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:201cbb940b22"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-text",
+                  "label": "情况简要说明：",
+                  "name": "neonatalDescription",
+                  "id": "u:9d3738953133",
+                  "placeholder": "请输入",
+                  "hidden": false
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 8,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:33fbabe006e6"
             }
           ],
           "style": {
@@ -657,7 +1612,7 @@
             "rowGap": "10px",
             "columnGap": "10px"
           },
-          "id": "u:e364dd8fabd9"
+          "id": "u:e73505b6fb93"
         }
       ],
       "actions": [
@@ -681,48 +1636,50 @@
       "resetAfterSubmit": true
     }
   ],
-  "actions": [
-    {
-      "type": "submit",
-      "label": "登录"
-    },
-    {
-      "type": "action",
-      "actionType": "dialog",
-      "label": "登录须知",
-      "dialog": {
-        "title": "登录须知",
-        "body": "登录须知"
-      }
-    },
-    {
-      "type": "button",
-      "label": "百度一下",
-      "url": "https://www.baidu.com/"
-    }
-  ],
   "data": {
-    "radios": "1",
-    "select": "A",
-    "radios1": "1",
-    "radios2": "1",
-    "radios3": "0",
+    "afterCellTransplant": "",
+    "donorBloodType": "",
+    "hasMenstrualBloodInfections": "",
+    "menstrualBloodInfection": "",
+    "menstrualBloodInfectionOther": "",
+    "causesImmuneThrombocytopenia": "",
+    "causesImmuneThrombocytopeniaType": "",
+    "causesImmuneThrombocytopeniaOther": "",
+    "hasBloodTransfusion": "",
+    "hasReasonOfPlateletDdecrease": "",
+    "reasonOfPlateletDdecrease": "",
+    "reasonOfPlateletDdecreaseOther": "",
     "transfusion": [
       {
-        "name1": "A",
-        "name2": "",
-        "name3": "",
-        "name4": "",
-        "radio5": "1"
-      },
-      {
-        "name1": "A",
-        "name2": "",
-        "name3": "",
-        "name4": "",
-        "radio5": "1"
+        "transfusionType": "",
+        "transfusionABOType": "",
+        "transfusionRHDType": "",
+        "transfusionVolume": "",
+        "transfusionEffect": ""
       }
-    ]
+    ],
+    "hasBloodTransfusionReaction": "",
+    "bloodTransfusionReaction": "",
+    "bloodTransfusionReactionOther": "",
+    "hasPregnancy": "",
+    "pregnanciesNum": "",
+    "childNum": "",
+    "miscarryNum": "",
+    "pregnancyWeek": "",
+    "pregnancyDay": "",
+    "decreasedPlateletCount": "",
+    "decreasedPlateletCountDescription": "",
+    "edemaOccurs": "",
+    "edemaOccursDescription": "",
+    "prematureDelivery": "",
+    "pneumonia": "",
+    "jaundice": "",
+    "petechiae": "",
+    "edema": "",
+    "ascites": "",
+    "gammaglobulin": "",
+    "neonatalDescription": "",
+    "bilirubin": ""
   },
   "id": "u:1cb7ea6a34e4",
   "asideResizor": false,
