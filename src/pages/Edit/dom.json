@@ -76,30 +76,23 @@
                   "type": "select",
                   "label": "供者血型：",
                   "name": "donorBloodType",
-                  "options": [
-                    {
-                      "label": "A",
-                      "value": "A"
-                    },
-                    {
-                      "label": "B",
-                      "value": "B"
-                    },
-                    {
-                      "label": "O",
-                      "value": "O"
-                    },
-                    {
-                      "label": "AB",
-                      "value": "AB"
-                    }
-                  ],
                   "id": "u:2b9322753067",
                   "multiple": false,
                   "mode": "horizontal",
                   "size": "lg",
                   "selectFirst": true,
-                  "clearable": true
+                  "clearable": true,
+                  "source": {
+                    "url": "/api/bloodType",
+                    "method": "get",
+                    "requestAdaptor": "",
+                    "adaptor": "",
+                    "messages": {
+                      "success": "1"
+                    },
+                    "cache": 3000,
+                    "dataType": "json"
+                  }
                 }
               ],
               "size": "none",
@@ -635,24 +628,19 @@
               "label": "ABO血型",
               "name": "transfusionABOType",
               "id": "u:e286138c6aed",
-              "options": [
-                {
-                  "label": "A",
-                  "value": "A"
+              "selectFirst": true,
+              "clearable": true,
+              "source": {
+                "url": "/api/bloodType",
+                "method": "get",
+                "requestAdaptor": "",
+                "adaptor": "",
+                "messages": {
+                  "success": "1"
                 },
-                {
-                  "label": "B",
-                  "value": "B"
-                },
-                {
-                  "label": "O",
-                  "value": "O"
-                },
-                {
-                  "label": "AB",
-                  "value": "AB"
-                }
-              ]
+                "cache": 3000,
+                "dataType": "json"
+              }
             },
             {
               "type": "select",
