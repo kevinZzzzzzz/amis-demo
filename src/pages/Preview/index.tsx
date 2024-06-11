@@ -1,3 +1,4 @@
+import renderApp from "@/main";
 import React, { useState, useEffect, useRef } from "react";
 import EditorComp from "./component/Editor";
 function PreviewPage(props: any) {
@@ -7,4 +8,5 @@ function PreviewPage(props: any) {
     </>
   );
 }
+renderApp(PreviewPage);
 export default PreviewPage;

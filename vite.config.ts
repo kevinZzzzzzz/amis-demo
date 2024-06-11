@@ -5,7 +5,28 @@ import { manualChunksPlugin } from "vite-plugin-webpackchunkname";
 import { visualizer } from "rollup-plugin-visualizer";
 import AutoImport from "unplugin-auto-import/vite";
 import ViteMonacoPlugin from "vite-plugin-monaco-editor";
+import { createHtmlPlugin } from "vite-plugin-html";
+import fs from "fs-extra";
 
+const HTMLparams = {
+  minify: true,
+  pages: [
+    {
+      entry: "src/pages/Edit/index.tsx",
+      template: "index.html",
+      filename: "Edit.html",
+      title: "amis-edit-react",
+      chunks: ["chunk-vendors", "chunk-common", "index"],
+    },
+    {
+      entry: "src/pages/Preview/index.tsx",
+      template: "index.html",
+      filename: "Preview.html",
+      title: "amis-preview-react",
+      chunks: ["chunk-vendors", "chunk-common", "index"],
+    },
+  ],
+};
 // https://vitejs.dev/config/
 export default ({ mode, command }) => {
   const env = loadEnv(mode, process.cwd()); // 获取.env文件里定义的环境变量
@@ -33,23 +54,59 @@ export default ({ mode, command }) => {
         },
       }),
       manualChunksPlugin(),
+      {
+        apply: "build",
+        writeBundle: async () => {
+          const distDir = path.resolve(__dirname, "./AmisUtils");
+          let exist = fs.existsSync(distDir);
+          if (!exist) {
+            fs.mkdirSync(distDir);
+          } else {
+            fs.removeSync(distDir);
+            fs.mkdirSync(distDir);
+          }
+          fs.copy(
+            path.resolve(__dirname, "./src/pages/AmisUtils"),
+            path.resolve(__dirname, "./AmisUtils"),
+            () => {
+              console.log("复制成功");
+              fs.removeSync(path.resolve(__dirname, "./src/pages/AmisUtils"));
+            }
+          );
+        },
+      },
+      // createHtmlPlugin(HTMLparams),
     ].concat(analysPlugins),
+    // base: "/amis",
+    root: "src/pages",
     build: {
+      assetsInlineLimit: 4096,
+      // assetsDir: "static",
+      cssCodeSplit: true,
       emptyOutDir: true,
       sourcemap: false,
       // manifest: true, //开启manifest
       rollupOptions: {
+        input: {
+          edit: path.join(__dirname, "src/pages/edit.html"),
+          preview: path.join(__dirname, "src/pages/preview.html"),
+        },
         output: {
-          chunkFileNames: "static/js/[name].[hash].js",
-          entryFileNames: "static/js/[name].[hash].js",
-          assetFileNames: "static/[ext]/[name].[hash].[ext]",
+          // dir: "AmisUtils",
+          chunkFileNames: "static/js/[name]-[hash].js",
+          entryFileNames: "static/js/[name].js",
+          assetFileNames: "static/[ext]/[name]-[hash].[ext]",
           manualChunks(id: string) {
-            if (id.includes("node_modules")) {
-              return "vendor"; //代码宰割为第三方包
+            if (id.includes("amis")) {
+              return "amis"; //代码宰割为第三方包
+            } else if (id.includes("node_modules")) {
+              return "vendor";
             }
           },
         },
       },
+
+      outDir: "AmisUtils",
     },
     define: {
       "process.env": process.env,

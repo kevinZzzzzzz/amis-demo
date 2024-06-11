@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import {
   HashRouter,
+  BrowserRouter,
   Navigate,
   Route,
   Routes,
@@ -40,7 +41,7 @@ function App() {
   //   };
   // }, []);
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Navigate to="/home" />}></Route>
         <Route path="/:notFoundPath" element={<Navigate to="/404" />}></Route>
@@ -58,7 +59,7 @@ function App() {
           );
         })}
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
 export default App;

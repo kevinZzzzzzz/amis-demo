@@ -1,9 +1,9 @@
 {
-  "name": "amis-demo",
+  "name": "amis-utils",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build --mode production",
+    "build": "node --max_old_space_size=8192 node_modules/vite/bin/vite.js build --mode production",
     "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --fix",
     "preview": "vite preview",
     "prepare ": "husky install"
@@ -46,6 +46,7 @@
     "eslint": "^8.38.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
+    "fs-extra": "^11.2.0",
     "husky": "8.0.3",
     "lint-staged": "13.2.2",
     "rollup-plugin-visualizer": "^5.9.0",
@@ -53,6 +54,7 @@
     "typescript": "*",
     "unplugin-auto-import": "^0.16.7",
     "vite": "^4.3.9",
+    "vite-plugin-html": "^3.2.2",
     "vite-plugin-monaco-editor": "^1.1.0",
     "vite-plugin-require-transform": "^1.0.5",
     "vite-plugin-webpackchunkname": "^0.2.4"
