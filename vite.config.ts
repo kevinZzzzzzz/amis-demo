@@ -77,8 +77,8 @@ export default ({ mode, command }) => {
       },
       // createHtmlPlugin(HTMLparams),
     ].concat(analysPlugins),
-    // base: "/amis",
-    root: "src/pages",
+    base: mode === "production" ? "./" : "/AmisUtils/",
+    root: mode === "production" ? "src/pages" : "",
     build: {
       assetsInlineLimit: 4096,
       // assetsDir: "static",
@@ -120,14 +120,14 @@ export default ({ mode, command }) => {
       port: 8888,
       host: true,
       proxy: {
-        "/api": {
+        "/amisApi": {
           target: env.VITE_BASE_URL,
           changeOrigin: true,
           secure: false, // 解决代理https协议报错问题
           headers: {
             "Access-Control-Allow-Origin": "*",
           },
-          rewrite: (path: string) => path.replace(/^\/api/, ""),
+          rewrite: (path: string) => path.replace(/^\/amisApi/, ""),
         },
       },
     },

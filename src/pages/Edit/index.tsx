@@ -31,8 +31,11 @@ export function Amis(props: Props) {
     props.pageChangeHandler && props.pageChangeHandler(value);
   };
   const onSave = () => {
-    console.log(pageJsonObj, "pageJsonObj=--------");
     props.codeGenHandler && props.codeGenHandler(pageJsonObj);
+    window.$api.insertTemp({
+      amisTemplate: JSON.stringify(pageJsonObj),
+      templateName: "briefHistory",
+    });
   };
   return (
     <>

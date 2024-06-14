@@ -21,6 +21,7 @@ import "amis-ui/lib/themes/antd.css";
 declare global {
   interface Window {
     $api: any;
+    $DomsJson: any;
   }
 }
 /* 
@@ -41,7 +42,7 @@ function App() {
   //   };
   // }, []);
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/AmisUtils">
       <Routes>
         <Route path="/" element={<Navigate to="/home" />}></Route>
         <Route path="/:notFoundPath" element={<Navigate to="/404" />}></Route>

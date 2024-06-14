@@ -2,7 +2,7 @@
   "type": "page",
   "body": [
     {
-      "id": "u:58f379889003",
+      "id": "u:a15a69bc9e91",
       "type": "form",
       "title": "",
       "mode": "horizontal",
@@ -11,7 +11,7 @@
       "body": [
         {
           "type": "tpl",
-          "id": "u:173daa7ae336",
+          "id": "u:5128c2553f00",
           "tpl": "既往史",
           "inline": true,
           "wrapperComponent": "h2",
@@ -31,7 +31,7 @@
         },
         {
           "type": "flex",
-          "id": "u:d4fdc7a2470f",
+          "id": "u:78f23226bdcb",
           "items": [
             {
               "type": "container",
@@ -50,7 +50,7 @@
                       "value": "1"
                     }
                   ],
-                  "id": "u:a6f2c5c8f59d",
+                  "id": "u:a8076dbacd0e",
                   "mode": "inline",
                   "value": "0",
                   "selectFirst": true
@@ -67,7 +67,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:2351a7b1e8e2"
+              "id": "u:82d38fcb4ee2"
             },
             {
               "type": "container",
@@ -76,14 +76,14 @@
                   "type": "select",
                   "label": "供者血型：",
                   "name": "donorBloodType",
-                  "id": "u:2b9322753067",
+                  "id": "u:af3bc368e0d6",
                   "multiple": false,
                   "mode": "horizontal",
                   "size": "lg",
                   "selectFirst": true,
                   "clearable": true,
                   "source": {
-                    "url": "/api/bloodType",
+                    "url": "/amisApi/accurateBlood/amis/getAmisAboDictionary",
                     "method": "get",
                     "requestAdaptor": "",
                     "adaptor": "",
@@ -106,7 +106,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:eac861cce66e"
+              "id": "u:a74fabe7f89b"
             }
           ],
           "style": {
@@ -128,7 +128,7 @@
         },
         {
           "type": "flex",
-          "id": "u:710e189fe02f",
+          "id": "u:760fe2f52dc4",
           "items": [
             {
               "type": "container",
@@ -147,7 +147,7 @@
                       "value": "1"
                     }
                   ],
-                  "id": "u:64c5ced62f7d",
+                  "id": "u:4699f80c847e",
                   "mode": "inline",
                   "value": "0",
                   "selectFirst": true
@@ -164,7 +164,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:608d4e29cf3d"
+              "id": "u:ddd28d682e4b"
             },
             {
               "type": "container",
@@ -196,17 +196,18 @@
                       "value": "其他"
                     }
                   ],
-                  "id": "u:edb2cb22ebb3",
+                  "id": "u:29ee0c403e9a",
                   "checkAll": false,
                   "joinValues": true,
                   "mode": "inline",
-                  "visibleOn": ""
+                  "visibleOn": "",
+                  "hiddenOn": "${hasMenstrualBloodInfections !== '1'}"
                 },
                 {
                   "type": "input-text",
                   "label": "",
                   "name": "menstrualBloodInfectionOther",
-                  "id": "u:216671613f70",
+                  "id": "u:1049233414d2",
                   "mode": "inline",
                   "size": "lg",
                   "visible": true,
@@ -225,7 +226,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:3c78e47afcd6"
+              "id": "u:a698430536f2"
             }
           ],
           "style": {
@@ -265,7 +266,7 @@
                       "value": "1"
                     }
                   ],
-                  "id": "u:71f2ae53c3e7",
+                  "id": "u:6da4992fac0a",
                   "mode": "inline",
                   "value": "1",
                   "selectFirst": true
@@ -297,18 +298,19 @@
                       "value": "其他"
                     }
                   ],
-                  "id": "u:685110aa91ed",
+                  "id": "u:161a87193b96",
                   "checkAll": false,
                   "joinValues": true,
                   "mode": "inline",
-                  "disabledOn": "${causesImmuneThrombocytopenia != '1'}",
-                  "visible": true
+                  "visible": true,
+                  "disabled": false,
+                  "hiddenOn": "${causesImmuneThrombocytopenia  != '1'}"
                 },
                 {
                   "type": "input-text",
                   "label": "",
                   "name": "causesImmuneThrombocytopeniaOther",
-                  "id": "u:153268d4360b",
+                  "id": "u:7b934bb06fee",
                   "mode": "inline",
                   "size": "lg",
                   "visible": true,
@@ -327,7 +329,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:fc5cb790a82a"
+              "id": "u:9762dbcb1967"
             }
           ],
           "style": {
@@ -337,7 +339,7 @@
             "flexWrap": "nowrap",
             "inset": "auto"
           },
-          "id": "u:a6a38295e166",
+          "id": "u:b3bfb177b43a",
           "isFixedHeight": false,
           "isFixedWidth": false,
           "themeCss": {
@@ -368,7 +370,7 @@
                       "value": "1"
                     }
                   ],
-                  "id": "u:71f2ae53c3e7",
+                  "id": "u:6da4992fac0a",
                   "mode": "inline",
                   "value": "1",
                   "selectFirst": true
@@ -404,18 +406,19 @@
                       "value": "其他"
                     }
                   ],
-                  "id": "u:685110aa91ed",
+                  "id": "u:161a87193b96",
                   "checkAll": false,
                   "joinValues": true,
                   "mode": "inline",
-                  "disabledOn": "${hasReasonOfPlateletDdecrease != '1'}",
-                  "visible": true
+                  "visible": true,
+                  "disabled": false,
+                  "hiddenOn": "${hasReasonOfPlateletDdecrease != '1'}"
                 },
                 {
                   "type": "input-text",
                   "label": "",
                   "name": "reasonOfPlateletDdecreaseOther",
-                  "id": "u:153268d4360b",
+                  "id": "u:7b934bb06fee",
                   "mode": "inline",
                   "size": "lg",
                   "visible": true,
@@ -434,7 +437,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:fc5cb790a82a"
+              "id": "u:9762dbcb1967"
             }
           ],
           "style": {
@@ -444,7 +447,7 @@
             "flexWrap": "nowrap",
             "inset": "auto"
           },
-          "id": "u:a6a38295e166",
+          "id": "u:b3bfb177b43a",
           "isFixedHeight": false,
           "isFixedWidth": false,
           "themeCss": {
@@ -457,7 +460,7 @@
         },
         {
           "type": "tpl",
-          "id": "u:e4aa08349b57",
+          "id": "u:97805a4479e9",
           "tpl": "输血史",
           "inline": true,
           "wrapperComponent": "h2",
@@ -502,7 +505,7 @@
                           "value": "2"
                         }
                       ],
-                      "id": "u:0ea6beb4ca2c",
+                      "id": "u:53ecec4a3b10",
                       "mode": "inline",
                       "value": "0",
                       "selectFirst": true
@@ -514,12 +517,12 @@
                     "display": "block",
                     "flex": "1 1 auto",
                     "flexGrow": 1,
-                    "flexBasis": 0
+                    "flexBasis": "0px"
                   },
                   "wrapperBody": false,
                   "isFixedHeight": false,
                   "isFixedWidth": false,
-                  "id": "u:d294faa73951"
+                  "id": "u:7a360cc7260b"
                 },
                 {
                   "type": "container",
@@ -529,8 +532,9 @@
                       "label": "增加品种",
                       "target": "transfusion",
                       "actionType": "add",
-                      "id": "u:3890c6f87832",
-                      "level": "primary"
+                      "id": "u:5a93b45990e0",
+                      "level": "primary",
+                      "hiddenOn": "${hasBloodTransfusion != '1'}"
                     }
                   ],
                   "size": "none",
@@ -544,7 +548,7 @@
                   "wrapperBody": false,
                   "isFixedHeight": false,
                   "isFixedWidth": false,
-                  "id": "u:c68a3d78220b"
+                  "id": "u:41a3618a58a5"
                 },
                 {
                   "type": "container",
@@ -559,7 +563,7 @@
                   "wrapperBody": false,
                   "isFixedHeight": false,
                   "isFixedWidth": false,
-                  "id": "u:0dd4edfdea65"
+                  "id": "u:251a3a90c277"
                 }
               ],
               "style": {
@@ -569,7 +573,7 @@
                 "flexWrap": "nowrap",
                 "inset": "auto"
               },
-              "id": "u:ed48c5e59a36",
+              "id": "u:e55521e31e2e",
               "isFixedHeight": false,
               "isFixedWidth": false,
               "themeCss": {
@@ -592,46 +596,48 @@
           "wrapperBody": false,
           "isFixedHeight": false,
           "isFixedWidth": false,
-          "id": "u:a5b0065501d3"
+          "id": "u:8ac79f022183"
         },
         {
           "type": "input-table",
           "name": "transfusion",
           "columns": [
             {
-              "type": "select",
+              "type": "input-text",
               "label": "输血品种",
               "name": "transfusionType",
-              "id": "u:cc0b3a2b017d",
-              "placeholder": "请选择",
-              "options": [
-                {
-                  "label": "A",
-                  "value": "A"
-                },
-                {
-                  "label": "B",
-                  "value": "B"
-                },
-                {
-                  "label": "O",
-                  "value": "O"
-                },
-                {
-                  "label": "AB",
-                  "value": "AB"
-                }
-              ]
+              "id": "u:90c996b6ed5c"
             },
             {
               "type": "select",
               "label": "ABO血型",
               "name": "transfusionABOType",
-              "id": "u:e286138c6aed",
+              "id": "u:623b0147d80c",
               "selectFirst": true,
               "clearable": true,
               "source": {
-                "url": "/api/bloodType",
+                "url": "/amisApi/accurateBlood/amis/getAmisAboDictionary",
+                "method": "get",
+                "requestAdaptor": "",
+                "adaptor": "",
+                "messages": {
+                  "success": "1"
+                },
+                "cache": 3000,
+                "dataType": "json"
+              },
+              "placeholder": "-"
+            },
+            {
+              "type": "select",
+              "label": "Rh(D)血型",
+              "name": "transfusionRHDType",
+              "id": "u:a6daed401f62",
+              "placeholder": "-",
+              "selectFirst": true,
+              "clearable": true,
+              "source": {
+                "url": "/amisApi/accurateBlood/amis/getAmisRhdDictionary",
                 "method": "get",
                 "requestAdaptor": "",
                 "adaptor": "",
@@ -643,41 +649,17 @@
               }
             },
             {
-              "type": "select",
-              "label": "Rh(D)血型",
-              "name": "transfusionRHDType",
-              "id": "u:188144ae1487",
-              "options": [
-                {
-                  "label": "A",
-                  "value": "A"
-                },
-                {
-                  "label": "B",
-                  "value": "B"
-                },
-                {
-                  "label": "O",
-                  "value": "O"
-                },
-                {
-                  "label": "AB",
-                  "value": "AB"
-                }
-              ]
-            },
-            {
               "type": "input-text",
               "label": "输血量",
               "name": "transfusionVolume",
-              "id": "u:4316fe2c6a12",
+              "id": "u:6d44f72c88bd",
               "placeholder": "请输入"
             },
             {
               "type": "radios",
               "label": "输血效果",
               "name": "transfusionEffect",
-              "id": "u:0c1efda6440b",
+              "id": "u:72c87608b8a6",
               "options": [
                 {
                   "label": "良好",
@@ -694,19 +676,20 @@
               ]
             }
           ],
-          "id": "u:66701a0d2798",
+          "id": "u:dd7b632cca78",
           "needConfirm": false,
           "minLength": 0,
           "showFooterAddBtn": false,
           "columnsTogglable": false,
           "label": "",
           "addable": true,
-          "hidden": false,
           "showTableAddBtn": false,
           "addBtnIcon": "",
           "size": "full",
           "mode": "normal",
-          "removable": true
+          "removable": true,
+          "clearValueOnHidden": true,
+          "hiddenOn": "${hasBloodTransfusion != '1'}"
         },
         {
           "type": "flex",
@@ -728,7 +711,7 @@
                       "value": "0"
                     }
                   ],
-                  "id": "u:e2e2cf06b962",
+                  "id": "u:a373416019e8",
                   "inline": true,
                   "mode": "inline"
                 }
@@ -744,7 +727,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:fd89bf58638f"
+              "id": "u:64bb7f6bd3c8"
             },
             {
               "type": "container",
@@ -753,7 +736,7 @@
                   "type": "input-text",
                   "label": "情况简要说明：",
                   "name": "bloodTransfusionReaction",
-                  "id": "u:1d5aa5e64050",
+                  "id": "u:d14eb75dd7eb",
                   "placeholder": "请输入",
                   "hiddenOn": "${hasBloodTransfusionReaction != '1'}"
                 }
@@ -769,7 +752,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:df4047afe1ae"
+              "id": "u:6ac09673ae1b"
             }
           ],
           "style": {
@@ -779,7 +762,7 @@
             "flexWrap": "nowrap",
             "inset": "auto"
           },
-          "id": "u:fe663e0095fb",
+          "id": "u:9c7fea2cd8aa",
           "isFixedHeight": false,
           "isFixedWidth": false,
           "themeCss": {
@@ -794,12 +777,286 @@
           "type": "input-text",
           "label": "其他说明：",
           "name": "bloodTransfusionReactionOther",
-          "id": "u:1238cf2aa039",
+          "id": "u:bd4f1f34f3c4",
           "placeholder": "请输入"
         },
         {
           "type": "tpl",
-          "id": "u:e7ae65f74dea",
+          "id": "u:2740b018a502",
+          "tpl": "药物史",
+          "inline": true,
+          "wrapperComponent": "h2",
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "10px",
+                "paddingBottom": "10px"
+              },
+              "border:default": {
+                "bottom-border-style": "solid",
+                "bottom-border-color": "#dcd5d5",
+                "bottom-border-width": "1px"
+              }
+            }
+          }
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "药物史：",
+                  "name": "hasPharmacohistory",
+                  "options": [
+                    {
+                      "label": "否",
+                      "value": "0"
+                    },
+                    {
+                      "label": "是",
+                      "value": "1"
+                    },
+                    {
+                      "label": "不详",
+                      "value": "2"
+                    }
+                  ],
+                  "id": "u:2f8c82a3b087",
+                  "mode": "inline",
+                  "value": "0",
+                  "selectFirst": true
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:42d9a32e5963"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "button",
+                  "label": "增加品种",
+                  "target": "pharmaco",
+                  "actionType": "add",
+                  "id": "u:a6fb82d1d204",
+                  "level": "primary",
+                  "hiddenOn": "${hasPharmacohistory != '1'}"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": 0
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:f2576a9c4488"
+            },
+            {
+              "type": "container",
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 1,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:73b0ce5c8c8a"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "id": "u:a0c1990be90c",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "input-table",
+          "name": "pharmaco",
+          "columns": [
+            {
+              "type": "select",
+              "label": "药物类型",
+              "name": "pharmacoType",
+              "id": "u:8ef15d500ccd",
+              "placeholder": "请选择",
+              "multiple": false,
+              "clearable": true,
+              "source": {
+                "url": "/amisApi/accurateBlood/amis/getAmisDrugDictionary",
+                "method": "get",
+                "requestAdaptor": "",
+                "adaptor": "",
+                "messages": {
+                  "success": "1"
+                },
+                "cache": 3000,
+                "dataType": "json"
+              },
+              "searchable": true
+            },
+            {
+              "type": "input-text",
+              "label": "品名",
+              "name": "pharmacoName",
+              "id": "u:0a620980eac7",
+              "placeholder": "请输入"
+            },
+            {
+              "type": "input-text",
+              "label": "剂量",
+              "name": "pharmacoDose",
+              "id": "u:b9621f286286",
+              "placeholder": "请输入"
+            },
+            {
+              "type": "input-text",
+              "label": "天数",
+              "name": "pharmacoDay",
+              "id": "u:82a04035aa7c",
+              "placeholder": "请输入"
+            }
+          ],
+          "id": "u:a54189aaddde",
+          "needConfirm": false,
+          "minLength": 0,
+          "showFooterAddBtn": false,
+          "columnsTogglable": false,
+          "label": "",
+          "addable": true,
+          "showTableAddBtn": false,
+          "addBtnIcon": "",
+          "size": "full",
+          "mode": "normal",
+          "removable": true,
+          "hiddenOn": "${hasPharmacohistory != '1'}",
+          "clearValueOnHidden": true
+        },
+        {
+          "type": "flex",
+          "items": [
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "radios",
+                  "label": "有无药物不良反应：",
+                  "name": "hasPharmacoReaction",
+                  "options": [
+                    {
+                      "label": "有",
+                      "value": "1"
+                    },
+                    {
+                      "label": "无",
+                      "value": "0"
+                    }
+                  ],
+                  "id": "u:f458fc79b2da",
+                  "inline": true,
+                  "mode": "inline"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 4,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:442a8d0a325c"
+            },
+            {
+              "type": "container",
+              "body": [
+                {
+                  "type": "input-text",
+                  "label": "情况简要说明：",
+                  "name": "pharmacoReaction",
+                  "id": "u:e76b685f69be",
+                  "placeholder": "请输入",
+                  "hiddenOn": "${hasPharmacoReaction != '1'}"
+                }
+              ],
+              "size": "none",
+              "style": {
+                "position": "static",
+                "display": "block",
+                "flex": "1 1 auto",
+                "flexGrow": 8,
+                "flexBasis": "0px"
+              },
+              "wrapperBody": false,
+              "isFixedHeight": false,
+              "isFixedWidth": false,
+              "id": "u:5981dd372e81"
+            }
+          ],
+          "style": {
+            "position": "relative",
+            "rowGap": "10px",
+            "columnGap": "10px",
+            "flexWrap": "nowrap",
+            "inset": "auto"
+          },
+          "id": "u:0b90b1222f45",
+          "isFixedHeight": false,
+          "isFixedWidth": false,
+          "themeCss": {
+            "baseControlClassName": {
+              "padding-and-margin:default": {
+                "marginBottom": "20px"
+              }
+            }
+          }
+        },
+        {
+          "type": "input-text",
+          "label": "其他说明：",
+          "name": "pharmacoTransfusionReactionOther",
+          "id": "u:85aa555b8976",
+          "placeholder": "请输入"
+        },
+        {
+          "type": "tpl",
+          "id": "u:8ef1049ad5ba",
           "tpl": "妊娠史",
           "inline": true,
           "wrapperComponent": "h2",
@@ -835,7 +1092,7 @@
               "value": "2"
             }
           ],
-          "id": "u:0e5246c02175",
+          "id": "u:8934d24f2de4",
           "mode": "horizontal",
           "value": "0",
           "selectFirst": true
@@ -851,7 +1108,7 @@
                   "label": "妊娠：",
                   "name": "pregnanciesNum",
                   "keyboard": true,
-                  "id": "u:1431b89dacab",
+                  "id": "u:5cc4fcf680b9",
                   "step": 1,
                   "mode": "horizontal",
                   "suffix": "",
@@ -861,7 +1118,8 @@
                       "value": "次"
                     }
                   ],
-                  "placeholder": "请输入"
+                  "placeholder": "请输入",
+                  "displayMode": "enhance"
                 }
               ],
               "size": "none",
@@ -875,7 +1133,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:786ca15514e0"
+              "id": "u:1996e00a5050"
             },
             {
               "type": "container",
@@ -885,7 +1143,7 @@
                   "label": "生育子女：",
                   "name": "childNum",
                   "keyboard": true,
-                  "id": "u:d08a80837291",
+                  "id": "u:2a99d88d96b4",
                   "step": 1,
                   "mode": "horizontal",
                   "suffix": "",
@@ -895,7 +1153,8 @@
                       "value": "个"
                     }
                   ],
-                  "placeholder": "请输入"
+                  "placeholder": "请输入",
+                  "displayMode": "enhance"
                 }
               ],
               "size": "none",
@@ -909,7 +1168,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:650395dac13b"
+              "id": "u:a8b2a790b0bb"
             },
             {
               "type": "container",
@@ -919,7 +1178,7 @@
                   "label": "流产：",
                   "name": "miscarryNum",
                   "keyboard": true,
-                  "id": "u:b13d67dc6cd2",
+                  "id": "u:baf9070b90a0",
                   "step": 1,
                   "mode": "horizontal",
                   "suffix": "",
@@ -929,7 +1188,8 @@
                       "value": "个"
                     }
                   ],
-                  "placeholder": "请输入"
+                  "placeholder": "请输入",
+                  "displayMode": "enhance"
                 }
               ],
               "size": "none",
@@ -943,7 +1203,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:b5024552b9f0"
+              "id": "u:33f34eb67548"
             },
             {
               "type": "container",
@@ -959,7 +1219,7 @@
                           "label": "当前妊娠：",
                           "name": "pregnancyWeek",
                           "keyboard": true,
-                          "id": "u:dac0ec0dd2d3",
+                          "id": "u:d12db97798de",
                           "step": 1,
                           "unitOptions": [
                             {
@@ -968,7 +1228,8 @@
                             }
                           ],
                           "mode": "horizontal",
-                          "size": "sm"
+                          "size": "full",
+                          "displayMode": "enhance"
                         }
                       ],
                       "size": "none",
@@ -976,13 +1237,13 @@
                         "position": "static",
                         "display": "block",
                         "flex": "1 1 auto",
-                        "flexGrow": 1,
+                        "flexGrow": 2,
                         "flexBasis": "0px"
                       },
                       "wrapperBody": false,
                       "isFixedHeight": false,
                       "isFixedWidth": false,
-                      "id": "u:dc3bd1e7718d"
+                      "id": "u:4e28f8597dff"
                     },
                     {
                       "type": "container",
@@ -992,7 +1253,7 @@
                           "label": "",
                           "name": "pregnancyDay",
                           "keyboard": true,
-                          "id": "u:18340673e9e2",
+                          "id": "u:74fac28ba91f",
                           "step": 1,
                           "unitOptions": [
                             {
@@ -1000,7 +1261,8 @@
                               "value": "天"
                             }
                           ],
-                          "mode": "inline"
+                          "mode": "inline",
+                          "displayMode": "enhance"
                         }
                       ],
                       "size": "none",
@@ -1014,15 +1276,20 @@
                       "wrapperBody": false,
                       "isFixedHeight": false,
                       "isFixedWidth": false,
-                      "id": "u:6dd78510a7ca"
+                      "id": "u:ca4465ee69df"
                     }
                   ],
                   "style": {
                     "position": "relative",
                     "rowGap": "10px",
-                    "columnGap": "10px"
+                    "columnGap": "10px",
+                    "flexWrap": "nowrap",
+                    "inset": "auto",
+                    "justifyContent": "flex-start"
                   },
-                  "id": "u:0a600e6bdd1c"
+                  "id": "u:262bf7a4bc24",
+                  "isFixedHeight": false,
+                  "isFixedWidth": false
                 }
               ],
               "size": "none",
@@ -1036,7 +1303,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:cc8221feb313"
+              "id": "u:5f4fe3294361"
             }
           ],
           "style": {
@@ -1046,7 +1313,7 @@
             "flexWrap": "nowrap",
             "inset": "auto"
           },
-          "id": "u:9ad50f2113c5",
+          "id": "u:14c79a4fa275",
           "isFixedHeight": false,
           "isFixedWidth": false,
           "themeCss": {
@@ -1078,7 +1345,7 @@
                       "value": "0"
                     }
                   ],
-                  "id": "u:b7029155ec0e",
+                  "id": "u:f2211afc6b03",
                   "mode": "inline"
                 }
               ],
@@ -1093,7 +1360,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:52e3cc005553"
+              "id": "u:3428ae622d31"
             },
             {
               "type": "container",
@@ -1102,7 +1369,7 @@
                   "type": "input-text",
                   "label": "情况简要说明：",
                   "name": "decreasedPlateletCountDescription ",
-                  "id": "u:95d81b2318aa",
+                  "id": "u:c44b94a56fd8",
                   "placeholder": "请输入",
                   "hiddenOn": "${decreasedPlateletCount != 1}"
                 }
@@ -1118,7 +1385,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:617f0abcc938"
+              "id": "u:57d415b38a64"
             }
           ],
           "style": {
@@ -1128,7 +1395,7 @@
             "flexWrap": "nowrap",
             "inset": "auto"
           },
-          "id": "u:b5cc7e588a2f",
+          "id": "u:04ec20e83364",
           "isFixedHeight": false,
           "isFixedWidth": false,
           "themeCss": {
@@ -1159,7 +1426,7 @@
                       "value": "0"
                     }
                   ],
-                  "id": "u:cce9acebdcea",
+                  "id": "u:2ca100cacf72",
                   "mode": "inline"
                 }
               ],
@@ -1174,7 +1441,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:5348c7742960"
+              "id": "u:1ad9a104cdee"
             },
             {
               "type": "container",
@@ -1183,7 +1450,7 @@
                   "type": "input-text",
                   "label": "情况简要说明：",
                   "name": "edemaOccursDescription ",
-                  "id": "u:6cfb1e4e514d",
+                  "id": "u:bca256bab01d",
                   "placeholder": "请输入",
                   "hiddenOn": "${edemaOccurs != 1}"
                 }
@@ -1199,7 +1466,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:c455d6c0b94b"
+              "id": "u:c8ea4f2faaae"
             }
           ],
           "style": {
@@ -1209,7 +1476,7 @@
             "flexWrap": "nowrap",
             "inset": "auto"
           },
-          "id": "u:ab11b8b6eeda",
+          "id": "u:66bf6a832020",
           "isFixedHeight": false,
           "isFixedWidth": false,
           "themeCss": {
@@ -1222,7 +1489,7 @@
         },
         {
           "type": "tpl",
-          "id": "u:df5578bcb468",
+          "id": "u:947366c00d18",
           "tpl": "新生儿史",
           "inline": true,
           "wrapperComponent": "h2",
@@ -1260,7 +1527,7 @@
                       "value": "0"
                     }
                   ],
-                  "id": "u:ebbaffc33161"
+                  "id": "u:1a213dc58675"
                 }
               ],
               "size": "none",
@@ -1274,7 +1541,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:3ac570665523"
+              "id": "u:9cf74412ee1f"
             },
             {
               "type": "container",
@@ -1293,7 +1560,7 @@
                       "value": "0"
                     }
                   ],
-                  "id": "u:0e609b74dbe2"
+                  "id": "u:737dddb65829"
                 }
               ],
               "size": "none",
@@ -1307,7 +1574,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:4d9c234e3572"
+              "id": "u:4d766a925d47"
             },
             {
               "type": "container",
@@ -1326,7 +1593,7 @@
                       "value": "0"
                     }
                   ],
-                  "id": "u:db1a05b5863c"
+                  "id": "u:c66b6d3b9b88"
                 }
               ],
               "size": "none",
@@ -1340,7 +1607,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:c7febe806fd7"
+              "id": "u:8d4be882945e"
             },
             {
               "type": "container",
@@ -1356,7 +1623,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:a3247e95cc1a"
+              "id": "u:7739ec3ab77a"
             }
           ],
           "style": {
@@ -1366,7 +1633,7 @@
             "flexWrap": "nowrap",
             "inset": "auto"
           },
-          "id": "u:87a5ef19f0c7",
+          "id": "u:362d6291237a",
           "isFixedHeight": false,
           "isFixedWidth": false,
           "themeCss": {
@@ -1397,7 +1664,7 @@
                       "value": "0"
                     }
                   ],
-                  "id": "u:e0a30d721bf9",
+                  "id": "u:ed9542584dbc",
                   "mode": "inline"
                 }
               ],
@@ -1412,7 +1679,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:322411d07097"
+              "id": "u:1ba1b3daf450"
             },
             {
               "type": "container",
@@ -1431,7 +1698,7 @@
                       "value": "0"
                     }
                   ],
-                  "id": "u:3eb08e24dd03"
+                  "id": "u:2d19ecdc34ae"
                 }
               ],
               "size": "none",
@@ -1445,7 +1712,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:4fe628def58e"
+              "id": "u:545e12d976f7"
             },
             {
               "type": "container",
@@ -1464,7 +1731,7 @@
                       "value": "0"
                     }
                   ],
-                  "id": "u:4d92ad06ca6b"
+                  "id": "u:3612902f91a3"
                 }
               ],
               "size": "none",
@@ -1478,7 +1745,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:27e4fa9abdb5"
+              "id": "u:a07e4ed11fab"
             },
             {
               "type": "container",
@@ -1497,7 +1764,7 @@
                       "value": "0"
                     }
                   ],
-                  "id": "u:31aea6ec4c41",
+                  "id": "u:6507efa11d6e",
                   "mode": "inline"
                 }
               ],
@@ -1512,7 +1779,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:b567b6755d1e"
+              "id": "u:a9ddccc54dae"
             }
           ],
           "style": {
@@ -1522,7 +1789,7 @@
             "flexWrap": "nowrap",
             "inset": "auto"
           },
-          "id": "u:d1d72d04b16b",
+          "id": "u:91944f25906f",
           "isFixedHeight": false,
           "isFixedWidth": false,
           "themeCss": {
@@ -1544,7 +1811,7 @@
                   "label": "胆红素：",
                   "name": "bilirubin",
                   "keyboard": true,
-                  "id": "u:5ed5b6f727e1",
+                  "id": "u:a6c02f5a992f",
                   "step": 1,
                   "mode": "horizontal",
                   "suffix": "",
@@ -1554,7 +1821,8 @@
                       "value": "个"
                     }
                   ],
-                  "placeholder": "请输入"
+                  "placeholder": "请输入",
+                  "displayMode": "enhance"
                 }
               ],
               "size": "none",
@@ -1568,7 +1836,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:201cbb940b22"
+              "id": "u:da0202987540"
             },
             {
               "type": "container",
@@ -1577,7 +1845,7 @@
                   "type": "input-text",
                   "label": "情况简要说明：",
                   "name": "neonatalDescription",
-                  "id": "u:9d3738953133",
+                  "id": "u:afb68f0ee526",
                   "placeholder": "请输入",
                   "hidden": false
                 }
@@ -1593,7 +1861,7 @@
               "wrapperBody": false,
               "isFixedHeight": false,
               "isFixedWidth": false,
-              "id": "u:33fbabe006e6"
+              "id": "u:f51660f8b68f"
             }
           ],
           "style": {
@@ -1601,7 +1869,7 @@
             "rowGap": "10px",
             "columnGap": "10px"
           },
-          "id": "u:e73505b6fb93"
+          "id": "u:e7bd3887f82b"
         }
       ],
       "actions": [
@@ -1612,30 +1880,33 @@
             "click": {
               "actions": [
                 {
-                  "actionType": "submit",
-                  "componentId": "u:58f379889003"
+                  "actionType": "custom",
+                  "componentId": "",
+                  "args": {},
+                  "ignoreError": false,
+                  "script": "const customEvent = new CustomEvent('formSubmit', { detail: event.data }); window.dispatchEvent(customEvent);"
                 }
               ]
             }
           },
           "level": "primary",
-          "id": "u:efbee467c13b"
+          "id": "u:8d3584a010c1"
         }
       ],
       "resetAfterSubmit": true
     }
   ],
   "data": {
-    "afterCellTransplant": "",
+    "afterCellTransplant": "0",
     "donorBloodType": "",
-    "hasMenstrualBloodInfections": "",
+    "hasMenstrualBloodInfections": "0",
     "menstrualBloodInfection": "",
     "menstrualBloodInfectionOther": "",
-    "causesImmuneThrombocytopenia": "",
+    "causesImmuneThrombocytopenia": "0",
     "causesImmuneThrombocytopeniaType": "",
     "causesImmuneThrombocytopeniaOther": "",
-    "hasBloodTransfusion": "",
-    "hasReasonOfPlateletDdecrease": "",
+    "hasBloodTransfusion": "0",
+    "hasReasonOfPlateletDdecrease": "0",
     "reasonOfPlateletDdecrease": "",
     "reasonOfPlateletDdecreaseOther": "",
     "transfusion": [
@@ -1647,28 +1918,40 @@
         "transfusionEffect": ""
       }
     ],
-    "hasBloodTransfusionReaction": "",
+    "hasBloodTransfusionReaction": "0",
     "bloodTransfusionReaction": "",
     "bloodTransfusionReactionOther": "",
-    "hasPregnancy": "",
+    "hasPregnancy": "0",
     "pregnanciesNum": "",
     "childNum": "",
     "miscarryNum": "",
     "pregnancyWeek": "",
     "pregnancyDay": "",
-    "decreasedPlateletCount": "",
+    "decreasedPlateletCount": "0",
     "decreasedPlateletCountDescription": "",
-    "edemaOccurs": "",
+    "edemaOccurs": "0",
     "edemaOccursDescription": "",
-    "prematureDelivery": "",
-    "pneumonia": "",
-    "jaundice": "",
-    "petechiae": "",
-    "edema": "",
-    "ascites": "",
-    "gammaglobulin": "",
+    "prematureDelivery": "0",
+    "pneumonia": "0",
+    "jaundice": "0",
+    "petechiae": "0",
+    "edema": "0",
+    "ascites": "0",
+    "gammaglobulin": "0",
     "neonatalDescription": "",
-    "bilirubin": ""
+    "bilirubin": "",
+    "hasPharmacohistory": "0",
+    "pharmaco": [
+      {
+        "pharmacoType": "",
+        "pharmacoName": "",
+        "pharmacoDose": "",
+        "pharmacoDay": ""
+      }
+    ],
+    "hasPharmacoReaction": "0",
+    "pharmacoReaction": "",
+    "pharmacoReactionOther": ""
   },
   "id": "u:1cb7ea6a34e4",
   "asideResizor": false,
