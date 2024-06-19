@@ -88,22 +88,22 @@ export default ({ mode, command }) => {
       // manifest: true, //开启manifest
       rollupOptions: {
         input: {
-          edit: path.join(__dirname, "src/pages/edit.html"),
-          preview: path.join(__dirname, "src/pages/preview.html"),
+          edit: path.resolve(__dirname, "src/pages/edit.html"),
+          preview: path.resolve(__dirname, "src/pages/preview.html"),
         },
-        output: {
-          // dir: "AmisUtils",
-          chunkFileNames: "static/js/[name]-[hash].js",
-          entryFileNames: "static/js/[name].js",
-          assetFileNames: "static/[ext]/[name]-[hash].[ext]",
-          manualChunks(id: string) {
-            if (id.includes("amis")) {
-              return "amis"; //代码宰割为第三方包
-            } else if (id.includes("node_modules")) {
-              return "vendor";
-            }
-          },
-        },
+        // output: {
+        //   // dir: "AmisUtils",
+        //   chunkFileNames: "static/js/[name]-[hash].js",
+        //   entryFileNames: "static/js/[name].js",
+        //   assetFileNames: "static/[ext]/[name]-[hash].[ext]",
+        //   manualChunks(id: string) {
+        //     if (id.includes("amis")) {
+        //       return "amis"; //代码宰割为第三方包
+        //     } else if (id.includes("node_modules")) {
+        //       return "vendor";
+        //     }
+        //   },
+        // },
       },
 
       outDir: "AmisUtils",
@@ -126,8 +126,10 @@ export default ({ mode, command }) => {
           secure: false, // 解决代理https协议报错问题
           headers: {
             "Access-Control-Allow-Origin": "*",
+            cookie:
+              "X-Uaa-Csrf=RR8UGf6oTbz8I8GZ8m67q4; x-token-random=1073470.6915378917; JSESSIONID=1DEB9AF5A259A545DEE55D475C904A7B; SESSION=N2Q0ODcwZjItNjFjOS00ZWQxLWI4YmUtNTQ0NjcwNGNlMTky",
           },
-          rewrite: (path: string) => path.replace(/^\/amisApi/, ""),
+          rewrite: (path: string) => path.replace(/^\/amisApi/, "/amisApi"),
         },
       },
     },

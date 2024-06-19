@@ -28,12 +28,29 @@ export default {
       false
     );
   },
+  /**
+   * 新增编辑模板
+   * @returns
+   */
   async insertTemp(data: any = {}): Promise<AxiosResponse<any, any>> {
     return await http.post(
       setProxy("/accurateBlood/amis/insertTemplate"),
       { data },
-      true,
-      true
+      false,
+      false
+    );
+  },
+  /**
+   * 获取带数据的模板
+   * @returns
+   */
+  async getHasDataTemp(data: any = {}): Promise<AxiosResponse<any, any>> {
+    return await http.get(
+      setProxy(
+        `/accurateBlood/amis/getData${formatGetParams(clearData(data))}`
+      ),
+      false,
+      false
     );
   },
 };

@@ -30,35 +30,31 @@ declare global {
 window.$api = { ...api };
 
 function App() {
-  // useEffect(() => {
-  //   console.log(111111111, window.self !== window.top);
-  //   const handleMessage = (event: any) => {
-  //     console.log(event, "event----------");
-  //   };
-  //   window.addEventListener("message", handleMessage, false);
-
-  //   return () => {
-  //     window.removeEventListener("message", handleMessage, false);
-  //   };
-  // }, []);
   return (
     <BrowserRouter basename="/AmisUtils">
       <Routes>
-        <Route path="/" element={<Navigate to="/home" />}></Route>
-        <Route path="/:notFoundPath" element={<Navigate to="/404" />}></Route>
-        {routes.map((e: any) => {
-          return (
+        {import.meta.env.MODE === "development" ? (
+          <>
+            <Route path="/" element={<Navigate to="/home" />}></Route>
             <Route
-              key={e.key}
-              path={e.path}
-              element={
-                <DefaultLayout>
-                  <e.component />
-                </DefaultLayout>
-              }
+              path="/:notFoundPath"
+              element={<Navigate to="/404" />}
             ></Route>
-          );
-        })}
+            {routes.map((e: any) => {
+              return (
+                <Route
+                  key={e.key}
+                  path={e.path}
+                  element={
+                    <DefaultLayout>
+                      <e.component />
+                    </DefaultLayout>
+                  }
+                ></Route>
+              );
+            })}
+          </>
+        ) : null}
       </Routes>
     </BrowserRouter>
   );
