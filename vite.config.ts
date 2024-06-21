@@ -8,25 +8,6 @@ import ViteMonacoPlugin from "vite-plugin-monaco-editor";
 import { createHtmlPlugin } from "vite-plugin-html";
 import fs from "fs-extra";
 
-const HTMLparams = {
-  minify: true,
-  pages: [
-    {
-      entry: "src/pages/Edit/index.tsx",
-      template: "index.html",
-      filename: "Edit.html",
-      title: "amis-edit-react",
-      chunks: ["chunk-vendors", "chunk-common", "index"],
-    },
-    {
-      entry: "src/pages/Preview/index.tsx",
-      template: "index.html",
-      filename: "Preview.html",
-      title: "amis-preview-react",
-      chunks: ["chunk-vendors", "chunk-common", "index"],
-    },
-  ],
-};
 // https://vitejs.dev/config/
 export default ({ mode, command }) => {
   const env = loadEnv(mode, process.cwd()); // 获取.env文件里定义的环境变量
@@ -127,7 +108,7 @@ export default ({ mode, command }) => {
           headers: {
             "Access-Control-Allow-Origin": "*",
             cookie:
-              "X-Uaa-Csrf=RR8UGf6oTbz8I8GZ8m67q4; x-token-random=1073470.6915378917; JSESSIONID=1DEB9AF5A259A545DEE55D475C904A7B; SESSION=N2Q0ODcwZjItNjFjOS00ZWQxLWI4YmUtNTQ0NjcwNGNlMTky",
+              "X-Uaa-Csrf=RR8UGf6oTbz8I8GZ8m67q4; x-token-random=1073470.6915378917; JSESSIONID=1DEB9AF5A259A545DEE55D475C904A7B; SESSION=NDEzNWNkNWQtYzE4OS00ODFiLTgwNTktNTRiMjEwMDU5NWM1",
           },
           rewrite: (path: string) => path.replace(/^\/amisApi/, "/amisApi"),
         },

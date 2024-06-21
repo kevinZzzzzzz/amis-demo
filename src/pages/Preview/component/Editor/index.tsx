@@ -5,30 +5,56 @@ import { SchemaObject } from "amis";
 import styles from "./index.module.scss";
 
 function EditorComp(props: any) {
+  const amisEditorRef = useRef(null);
   const [domsJson, setDomsJson] = useState({});
   const [loading, setLoading] = useState(true);
   const [mobile, setMobile] = useState(true);
   const [preview, setPreview] = useState(true);
   const [mask, setMask] = useState(false);
+  const needSubmit = useRef(true);
 
   /**
-   * 获取模板内容
-   * @param name 模板名称
+   * 处理postmessage事件
    */
-  const getTempJson = (event) => {
+  const handlePostMessage = (event) => {
     if (!event) return false;
     if (event.data?.mask) {
       setMask(true);
     }
-    if (event.data && event.data.businessNo) {
+    if (event.data && event.data.action) {
+      switch (event.data.action) {
+        case "submit":
+          needSubmit.current = false; // 不需要提交
+          const btnRef = amisEditorRef.current?.mainRef.current
+            .querySelector(".antd-Panel-footerWrap")
+            .getElementsByTagName("button");
+          btnRef[0] && btnRef[0]?.click();
+          break;
+
+        default:
+          break;
+      }
+    } else if (event.data && event.data.businessNo) {
+      getTempJson(event.data.name, event.data.businessNo);
+    } else {
+      getTempJson(event.data.name, "");
+    }
+  };
+  /**
+   * 获取模板内容
+   * @param templateName 模板名称
+   * @param businessNo 申请编号
+   */
+  const getTempJson = (templateName, businessNo) => {
+    if (businessNo) {
       window.$api
         .getHasDataTemp({
-          businessNo: event.data.businessNo,
+          businessNo: businessNo,
         })
         .then((res: any) => {
           // 如果没有模板 重新获取空模板
           if (!res) {
-            getTempJson(event.data.name);
+            getTempJson(templateName, "");
             return false;
           }
           const amisTemplate = JSON.parse(res.amisJson);
@@ -45,7 +71,7 @@ function EditorComp(props: any) {
     } else {
       window.$api
         .getTemp({
-          templateName: (event.data && event.data.name) || event,
+          templateName: templateName,
         })
         .then((res: any) => {
           const amisTemplate = JSON.parse(res[res.length - 1].amisTemplate);
@@ -75,11 +101,11 @@ function EditorComp(props: any) {
       ...JSON.parse(JSON.stringify(window.$DomsJson)),
       data: event.detail,
     };
-    console.log(domsJsonTemp, "domsJsonTemp");
     if (window.top != window) {
       window.parent.postMessage(
         {
           amisTemplate: domsJsonTemp,
+          needSubmit: needSubmit.current,
         },
         "*"
       );
@@ -87,16 +113,17 @@ function EditorComp(props: any) {
     // setLoading(true)
     // 在这里处理接收到的表单数据
   };
+
   useEffect(() => {
     setLoading(true);
     if (window.top == window) {
-      getTempJson("briefHistory");
+      getTempJson("briefHistory", "");
     }
-    window.addEventListener("message", getTempJson);
+    window.addEventListener("message", handlePostMessage);
     window.addEventListener("formSubmit", submitSave);
     return () => {
       window.removeEventListener("formSubmit", submitSave, false);
-      window.removeEventListener("message", getTempJson, false);
+      window.removeEventListener("message", handlePostMessage, false);
     };
   }, []);
 
@@ -107,6 +134,7 @@ function EditorComp(props: any) {
       ) : (
         <div className={styles.main}>
           <Editor
+            ref={amisEditorRef}
             {...props}
             isMobile={mobile}
             theme={"antd"}
